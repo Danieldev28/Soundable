@@ -12,3 +12,7 @@ To get started, create some files, play with the terminal,
 or visit https://docs.aws.amazon.com/console/cloud9/ for our documentation.
 
 Happy coding!
+<!--error-->
+<!--'str' object has no attribute '_meta'-->
+<!--error-->
+<!--Invalid block tag: 'static'-->
