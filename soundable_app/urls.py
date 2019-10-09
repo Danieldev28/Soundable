@@ -20,8 +20,11 @@ from Soundable.views import *
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$' , index),
-    url(r'^index/$' , index),
-    url(r'^contact/$', contact),
+    url(r'^$' , index, name='index'),
+    url(r'^contact/$', contact, name='contact'),
+    url(r'^artists/$', artists, name='artists'),
+    url(r'^artist/$', artist, name= 'artist'),
+    url(r'^blog/$', artist, name= 'blog'),
+
     
 ]

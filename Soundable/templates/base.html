@@ -16,7 +16,7 @@
 	<link rel="stylesheet" type="text/css" href="{%static 'styles/main_styles.css' %}">
 	<link rel="stylesheet" type="text/css" href="{%static 'styles/responsive.css' %}">
 	<!-----------------------------------------Personal sylesheet------------------->
-	<!--<link rel="stylesheet" href='css/style.css'  type="text/css"/>-->
+	<link rel="stylesheet" href="{%static 'css/style.css'%}"  type="text/css"/>
 	{% block head %}
 	{% endblock %}
 </head>
@@ -44,11 +44,11 @@
 							<!-- Main Navigation -->
 							<nav class="main_nav">
 								<ul class="d-flex flex-row align-items-center justify-content-start">
-										<li><a href="index">Home</a></li>
-									<li><a href="artists.html">Artists</a></li>
+										<li><a href="{% url 'index' %}">Home</a></li>
+									<li><a href="{% url 'artists' %}">Artists</a></li>
 									<li><a href="#">Download Music</a></li>
 									<li><a href="blog.html">News</a></li>
-									<li><a href="contact">Contact</a></li>
+									<li><a href="{% url 'contact' %}">Contact</a></li>
 								</ul>
 							</nav>
 
@@ -81,11 +81,11 @@
 				<div class="menu_content d-flex flex-column align-items-center justify-content-start">
 					<nav class="menu_nav">
 						<ul class="d-flex flex-column align-items-center justify-content-start">
-							<li><a href="index">Home</a></li>
-							<li><a href="artists.html">Artists</a></li>
+							<li><a href="{% url 'index' %}">Home</a></li>
+							<li><a href="{% url 'artists' %}">Artists</a></li>
 							<li><a href="#">Download Music</a></li>
-							<li><a href="blog.html">News</a></li>
-							<li><a href="contact">Contact</a></li>
+							<li><a href="{% url 'blog' %}">News</a></li>
+							<li><a href="{% url 'contact' %}">Contact</a></li>
 						</ul>
 					</nav>
 				</div>
