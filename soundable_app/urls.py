@@ -24,7 +24,7 @@ urlpatterns = [
     url(r'^contact/$', contact, name='contact'),
     url(r'^artists/$', artists, name='artists'),
     url(r'^artist/$', artist, name= 'artist'),
-    url(r'^blog/$', artist, name= 'blog'),
+    url(r'^blog.html/$', blog, name= 'blog'),
 
     
 ]

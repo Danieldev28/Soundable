@@ -18,6 +18,7 @@
 	<!-----------------------------------------Personal sylesheet------------------->
 	<link rel="stylesheet" href="{%static 'css/style.css'%}"  type="text/css"/>
 	{% block head %}
+	
 	{% endblock %}
 </head>
 
@@ -114,7 +115,8 @@
 		<!-- Footer -->
 
 		<footer class="footer">
-			<div class="background_image" style="{%static 'background-image:url(images/footer.jpg)' %}"></div>
+			<div class="background_image" style="background-image:url({%static 'images/footer.jpg'%})"></div>
+			<!--<div class="background_image" style="background-image:url({% static 'images/roberta-sorge-PN_c3RKCVlA-unsplash.jpg'%})"></div>-->
 			<div class="footer_content">
 				<div class="container">
 					<div class="row">
