@@ -25,6 +25,8 @@ urlpatterns = [
     url(r'^artists/$', artists, name='artists'),
     url(r'^artist/$', artist, name= 'artist'),
     url(r'^blog.html/$', blog, name= 'blog'),
+    url(r'^login.html/$', login, name= 'login'),
+    url(r'^register.html/$', register, name= 'register'),
 
     
 ]

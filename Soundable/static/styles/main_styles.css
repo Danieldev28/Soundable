@@ -151,7 +151,7 @@ h6::selection
 }
 img
 {
-	max-width: 100%;
+	max-width: 100%
 }
 button:active
 {
@@ -1883,3 +1883,4 @@ section
 	height: 49px;
 	line-height: 49px;
 }
+
