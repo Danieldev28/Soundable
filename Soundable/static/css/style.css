@@ -5,4 +5,8 @@
 .align-it {
     text-align: right;
 }
-
+/*not working!!! for form*/
+#col-4 {
+    padding-left: 10%;
+    padding-right:10%;
+}

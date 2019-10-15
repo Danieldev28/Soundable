@@ -26,3 +26,6 @@ def login(request):
     
 def register(request):
     return render(request,'register.html')
+    
+def songupload(request):
+    return render(request,'songupload.html')

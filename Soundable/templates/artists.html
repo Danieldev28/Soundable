@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-{% extends 'base.html' %}
-{% load static %}
-{% block head %}
+<!DOCTYPE html> {% extends 'base.html' %} {% load static %} {% block head %}
 <title>Artists</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,668 +10,404 @@
 <link rel="stylesheet" type="text/css" href="{%static 'plugins/OwlCarousel2-2.3.4/owl.theme.default.css' %}">
 <link rel="stylesheet" type="text/css" href="{%static 'plugins/OwlCarousel2-2.3.4/animate.css' %}">
 <link rel="stylesheet" type="text/css" href="{%static 'styles/artists.css' %}">
-<link rel="stylesheet" type="text/css" href="{%static 'styles/artists_responsive.css' %}">
-{% endblock %}
-{% block content %}
-	
-	<!-- Header -->
+<link rel="stylesheet" type="text/css" href="{%static 'styles/artists_responsive.css' %}"> {% endblock %} {% block content %}
+
+<!-- Header -->
 
 
 
-	<!-- Home -->
+<!-- Home -->
 
-	<div class="home">
-		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{%static 'images/artists.jpg'%}" data-speed="0.8"></div>
-		<div class="home_container">
-			<div class="container">
-				<div class="row">
-					<div class="col">
-						<div class="home_content text-center">
-							<div class="home_title">Artists</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- Search -->
-
-	<div class="search">
+<div class="home">
+	<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{%static 'images/artists.jpg'%}" data-speed="0.8"></div>
+	<div class="home_container">
 		<div class="container">
 			<div class="row">
 				<div class="col">
-					<div class="search_form_container">
-						<form action="#" class="search_form" id="search_form">
-							<div class="d-flex flex-md-row flex-column align-items-center justify-content-between">
-								<input type="text" class="search_input" placeholder="Album" required="required">
-								<button class="button search_button"><span>search</span></button>
-							</div>
-						</form>
+					<div class="home_content text-center">
+						<div class="home_title">Artists</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-
-	<!-- Artists -->
-
-	<div class="artists">
-		<div class="letters">
-			<ul class="d-flex flex-row align-items-start justify-content-center flex-wrap">
-				<li><a href="#">a</a></li>
-				<li><a href="#">b</a></li>
-				<li><a href="#">c</a></li>
-				<li><a href="#">d</a></li>
-				<li><a href="#">e</a></li>
-				<li><a href="#">f</a></li>
-				<li><a href="#">g</a></li>
-				<li><a href="#">h</a></li>
-				<li><a href="#">i</a></li>
-				<li><a href="#">j</a></li>
-				<li><a href="#">k</a></li>
-				<li><a href="#">l</a></li>
-				<li><a href="#">m</a></li>
-				<li><a href="#">n</a></li>
-				<li><a href="#">o</a></li>
-				<li><a href="#">p</a></li>
-				<li><a href="#">q</a></li>
-				<li><a href="#">r</a></li>
-				<li><a href="#">s</a></li>
-				<li><a href="#">t</a></li>
-				<li><a href="#">u</a></li>
-				<li><a href="#">v</a></li>
-				<li><a href="#">w</a></li>
-				<li><a href="#">x</a></li>
-				<li><a href="#">y</a></li>
-				<li><a href="#">z</a></li>
-			</ul>
-		</div>
-		<div class="artists_container">
-			<div class="container">
-				<div class="row">
-					<div class="col">
-						<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-   Genre
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-  </div>
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
- Tempo
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-  </div>
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Gender
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-  </div>
-
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-  Mood
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-  </div>
-  
-
-  
-
 </div>
-<br>
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Soundslike
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-  </div>
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-   Type
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-  </div>
-</div>
-<br>
 
+<!-- Search -->
 
-						
-			<button type="button" class="btn btn-primary">Find Songs!</button>
-			<button type="button" class="btn btn-secondary">Reset</button>
-			<br>
-	<form action="">
-          <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
-            <div class="input-group">
-              <input type="search" placeholder="Search by track title or track owner..." aria-describedby="button-addon1" class="form-control border-0 bg-light">
-              <div class="input-group-append">
-                <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
-              </div>
-            </div>
-          </div>
-        </form>
-  <button type="button" class="btn btn-secondary">title</button>
-  <button type="button" class="btn btn-secondary">time</button>
-  <button type="button" class="btn btn-secondary">bmp</button>
-  <button type="button" class="btn btn-secondary">tags</button>
-  <div>
-  <audio controls>
-  <source src="horse.ogg" type="audio/ogg">
-  <source src="horse.mp3" type="audio/mpeg">
-Your browser does not support the audio element.
-</audio>
-</div>
- <div class="options align-it">
-  
-  <button type="button" class="btn btn-secondary">play</button>
-  <button type="button" class="btn btn-secondary">buy</button>
-  <button type="button" class="btn btn-secondary">save</button>
-  
-  <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-   licensing options:
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-  </div>
-  </div>
-  </div>
-  	<form action="">
-          <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
-            <div class="input-group">
-              <input type="search" placeholder="Search by track title or track owner..." aria-describedby="button-addon1" class="form-control border-0 bg-light">
-              <div class="input-group-append">
-                <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
-              </div>
-            </div>
-          </div>
-        </form>
-  <button type="button" class="btn btn-secondary">title</button>
-  <button type="button" class="btn btn-secondary">time</button>
-  <button type="button" class="btn btn-secondary">bmp</button>
-  <button type="button" class="btn btn-secondary">tags</button>
-  <div>
-  <audio controls>
-  <source src="horse.ogg" type="audio/ogg">
-  <source src="horse.mp3" type="audio/mpeg">
-Your browser does not support the audio element.
-</audio>
-</div>
- <div class="options align-it">
-  
-  <button type="button" class="btn btn-secondary">play</button>
-  <button type="button" class="btn btn-secondary">buy</button>
-  <button type="button" class="btn btn-secondary">save</button>
-  
-  <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-   licensing options:
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-  </div>
-  </div>
-  </div>
-  
-  	<form action="">
-          <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
-            <div class="input-group">
-              <input type="search" placeholder="Search by track title or track owner..." aria-describedby="button-addon1" class="form-control border-0 bg-light">
-              <div class="input-group-append">
-                <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
-              </div>
-            </div>
-          </div>
-        </form>
-  <button type="button" class="btn btn-secondary">title</button>
-  <button type="button" class="btn btn-secondary">time</button>
-  <button type="button" class="btn btn-secondary">bmp</button>
-  <button type="button" class="btn btn-secondary">tags</button>
-  <div>
-  <audio controls>
-  <source src="horse.ogg" type="audio/ogg">
-  <source src="horse.mp3" type="audio/mpeg">
-Your browser does not support the audio element.
-</audio>
-</div>
- <div class="options align-it">
-  
-  <button type="button" class="btn btn-secondary">play</button>
-  <button type="button" class="btn btn-secondary">buy</button>
-  <button type="button" class="btn btn-secondary">save</button>
-  
-  <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-   licensing options:
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-  </div>
-  </div>
-  </div>
-        
-						
-						
-						
-						 Artist 
-						<div class="artist">
-							<div class="row">
-								
-								 Artist Image 
-								<div class="col-lg-6">
-									<div class="artist_image"><img src="images/artist_1.jpg" alt=""></div>
-								</div>
-
-								 Artist Content 
-								<div class="col-lg-6 artist_col">
-									<div class="artist_content">
-										<div class="artist_info">
-											<div class="artist_name"><h1><a href="{% url 'artist' %}">Michael James</a></h1></div>
-											<div class="artist_text">
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum, neque ac porttitor scelerisque, nisi nisl tincidunt enim, non aliquet diam neque sed urna. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-											</div>
-											<div class="artist_store d-flex flex-row align-items-start justify-content-start flex-wrap">
-												<div class="store"><a href="#"><img src="images/appstore.png" alt=""></a></div>
-												<div class="store"><a href="#"><img src="images/googleplay.png" alt=""></a></div>
-											</div>
-										</div>
-
-										 Player 
-										<div class="single_player_container">
-											<div class="single_player">
-												<div class="jp-jplayer jplayer" data-title="Better Days" data-artist="Bensound" data-ancestor=".jp_container_1" data-url="files/bensound-betterdays.mp3"></div>
-												<div class="jp-audio jp_container_1" role="application" aria-label="media player">
-													<div class="jp-gui jp-interface single_player_inner d-flex flex-row align-items-center justify-content-start">
-
-														 Player Controls 
-														<div class="player_controls_box">
-															<div class="jp-controls-holder player_controls d-flex flex-row align-items-start justify-content-start">
-																<button class="jp-play player_button" tabindex="0"></button>
-																<button class="jp-stop player_button" tabindex="0"></button>
-															</div>
-														</div>
-
-														 Progress Bar 
-														<div class="player_bars d-flex flex-row align-items-start justify-content-start">
-															<div class="player_progress_box">
-																<div class="jp-current-time" role="timer" aria-label="time">00:00</div>
-																<div class="song_info">
-																	<div class="jp-title" aria-label="title"></div>
-																</div>
-																<div class="jp-progress">
-																	<div class="jp-seek-bar">
-																		<div>
-																			<div class="jp-play-bar"><span></span></div>
-																		</div>
-																	</div>
-																</div>
-																<div class="jp-duration ml-auto" role="timer" aria-label="duration">00:00</div>
-															</div>
-
-															 Volume Controls 
-															<div class="jp-volume-controls ml-auto">
-																<div class="mute_button">
-																	<button class="jp-mute" tabindex="0"></button>
-																</div>
-																<div class="d-flex flex-row align-items-center justify-content-start">
-																	<div class="jp-volume-bar">
-																		<div>
-																			<div class="jp-volume-bar-value"></div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-														
-													</div>
-													<div class="jp-no-solution">
-														<span>Update Required</span>
-														To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-
-							</div>
+<div class="search">
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div class="search_form_container">
+					<form action="#" class="search_form" id="search_form">
+						<div class="d-flex flex-md-row flex-column align-items-center justify-content-between">
+							<input type="text" class="search_input" placeholder="Album" required="required">
+							<button class="button search_button"><span>search</span></button>
 						</div>
-
-						 Artist 
-						<div class="artist">
-							<div class="row">
-								
-								 Artist Image 
-								<div class="col-lg-6">
-									<div class="artist_image"><img src="images/artist_2.jpg" alt=""></div>
-								</div>
-
-								 Artist Content 
-								<div class="col-lg-6 artist_col">
-									<div class="artist_content">
-										<div class="artist_info">
-											<div class="artist_name"><h1><a href="{% url 'artist' %}">Samuel Doe</a></h1></div>
-											<div class="artist_text">
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum, neque ac porttitor scelerisque, nisi nisl tincidunt enim, non aliquet diam neque sed urna. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-											</div>
-											<div class="artist_store d-flex flex-row align-items-start justify-content-start flex-wrap">
-												<div class="store"><a href="#"><img src="images/appstore.png" alt=""></a></div>
-												<div class="store"><a href="#"><img src="images/googleplay.png" alt=""></a></div>
-											</div>
-										</div>
-
-										 Player 
-										<div class="single_player_container">
-											<div class="single_player">
-												<div class="jp-jplayer jplayer" data-title="Dubstep" data-artist="Bensound" data-ancestor=".jp_container_2" data-url="files/bensound-dubstep.mp3"></div>
-												<div class="jp-audio jp_container_2" role="application" aria-label="media player">
-													<div class="jp-gui jp-interface single_player_inner d-flex flex-row align-items-center justify-content-start">
-
-														 Player Controls 
-														<div class="player_controls_box">
-															<div class="jp-controls-holder player_controls d-flex flex-row align-items-start justify-content-start">
-																<button class="jp-play player_button" tabindex="0"></button>
-																<button class="jp-stop player_button" tabindex="0"></button>
-															</div>
-														</div>
-
-														 Progress Bar 
-														<div class="player_bars d-flex flex-row align-items-start justify-content-start">
-															<div class="player_progress_box">
-																<div class="jp-current-time" role="timer" aria-label="time">00:00</div>
-																<div class="song_info">
-																	<div class="jp-title" aria-label="title"></div>
-																</div>
-																<div class="jp-progress">
-																	<div class="jp-seek-bar">
-																		<div>
-																			<div class="jp-play-bar"><span></span></div>
-																		</div>
-																	</div>
-																</div>
-																<div class="jp-duration ml-auto" role="timer" aria-label="duration">00:00</div>
-															</div>
-
-															 Volume Controls 
-															<div class="jp-volume-controls ml-auto">
-																<div class="mute_button">
-																	<button class="jp-mute" tabindex="0"></button>
-																</div>
-																<div class="d-flex flex-row align-items-center justify-content-start">
-																	<div class="jp-volume-bar">
-																		<div>
-																			<div class="jp-volume-bar-value"></div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-														
-													</div>
-													<div class="jp-no-solution">
-														<span>Update Required</span>
-														To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-
-							</div>
-						</div>
-
-						 Artist 
-						<div class="artist">
-							<div class="row">
-								
-								 Artist Image 
-								<div class="col-lg-6">
-									<div class="artist_image"><img src="images/artist_3.jpg" alt=""></div>
-								</div>
-
-								 Artist Content 
-								<div class="col-lg-6 artist_col">
-									<div class="artist_content">
-										<div class="artist_info">
-											<div class="artist_name"><h1><a href="{% url 'artist' %}">Michael Smith</a></h1></div>
-											<div class="artist_text">
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum, neque ac porttitor scelerisque, nisi nisl tincidunt enim, non aliquet diam neque sed urna. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-											</div>
-											<div class="artist_store d-flex flex-row align-items-start justify-content-start flex-wrap">
-												<div class="store"><a href="#"><img src="images/appstore.png" alt=""></a></div>
-												<div class="store"><a href="#"><img src="images/googleplay.png" alt=""></a></div>
-											</div>
-										</div>
-
-										 Player 
-										<div class="single_player_container">
-											<div class="single_player">
-												<div class="jp-jplayer jplayer" data-title="Sunny" data-artist="Bensound" data-ancestor=".jp_container_3" data-url="files/bensound-sunny.mp3"></div>
-												<div class="jp-audio jp_container_3" role="application" aria-label="media player">
-													<div class="jp-gui jp-interface single_player_inner d-flex flex-row align-items-center justify-content-start">
-
-														 Player Controls 
-														<div class="player_controls_box">
-															<div class="jp-controls-holder player_controls d-flex flex-row align-items-start justify-content-start">
-																<button class="jp-play player_button" tabindex="0"></button>
-																<button class="jp-stop player_button" tabindex="0"></button>
-															</div>
-														</div>
-
-														 Progress Bar 
-														<div class="player_bars d-flex flex-row align-items-start justify-content-start">
-															<div class="player_progress_box">
-																<div class="jp-current-time" role="timer" aria-label="time">00:00</div>
-																<div class="song_info">
-																	<div class="jp-title" aria-label="title"></div>
-																</div>
-																<div class="jp-progress">
-																	<div class="jp-seek-bar">
-																		<div>
-																			<div class="jp-play-bar"><span></span></div>
-																		</div>
-																	</div>
-																</div>
-																<div class="jp-duration ml-auto" role="timer" aria-label="duration">00:00</div>
-															</div>
-
-															 Volume Controls 
-															<div class="jp-volume-controls ml-auto">
-																<div class="mute_button">
-																	<button class="jp-mute" tabindex="0"></button>
-																</div>
-																<div class="d-flex flex-row align-items-center justify-content-start">
-																	<div class="jp-volume-bar">
-																		<div>
-																			<div class="jp-volume-bar-value"></div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-														
-													</div>
-													<div class="jp-no-solution">
-														<span>Update Required</span>
-														To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-
-							</div>
-						</div>
-
-						 Artist 
-						<div class="artist">
-							<div class="row">
-								
-								 Artist Image 
-								<div class="col-lg-6">
-									<div class="artist_image"><img src="images/artist_4.jpg" alt=""></div>
-								</div>
-
-								 Artist Content 
-								<div class="col-lg-6 artist_col">
-									<div class="artist_content">
-										<div class="artist_info">
-											<div class="artist_name"><h1><a href="{% url 'artist' %}">DJ SammyG</a></h1></div>
-											<div class="artist_text">
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum, neque ac porttitor scelerisque, nisi nisl tincidunt enim, non aliquet diam neque sed urna. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-											</div>
-											<div class="artist_store d-flex flex-row align-items-start justify-content-start flex-wrap">
-												<div class="store"><a href="#"><img src="images/appstore.png" alt=""></a></div>
-												<div class="store"><a href="#"><img src="images/googleplay.png" alt=""></a></div>
-											</div>
-										</div>
-
-										 Player 
-										<div class="single_player_container">
-											<div class="single_player">
-												<div class="jp-jplayer jplayer" data-title="Better Days" data-artist="Bensound" data-ancestor=".jp_container_4" data-url="files/bensound-betterdays.mp3"></div>
-												<div class="jp-audio jp_container_4" role="application" aria-label="media player">
-													<div class="jp-gui jp-interface single_player_inner d-flex flex-row align-items-center justify-content-start">
-
-														 Player Controls 
-														<div class="player_controls_box">
-															<div class="jp-controls-holder player_controls d-flex flex-row align-items-start justify-content-start">
-																<button class="jp-play player_button" tabindex="0"></button>
-																<button class="jp-stop player_button" tabindex="0"></button>
-															</div>
-														</div>
-
-														 Progress Bar 
-														<div class="player_bars d-flex flex-row align-items-start justify-content-start">
-															<div class="player_progress_box">
-																<div class="jp-current-time" role="timer" aria-label="time">00:00</div>
-																<div class="song_info">
-																	<div class="jp-title" aria-label="title"></div>
-																</div>
-																<div class="jp-progress">
-																	<div class="jp-seek-bar">
-																		<div>
-																			<div class="jp-play-bar"><span></span></div>
-																		</div>
-																	</div>
-																</div>
-																<div class="jp-duration ml-auto" role="timer" aria-label="duration">00:00</div>
-															</div>
-
-															 Volume Controls 
-															<div class="jp-volume-controls ml-auto">
-																<div class="mute_button">
-																	<button class="jp-mute" tabindex="0"></button>
-																</div>
-																<div class="d-flex flex-row align-items-center justify-content-start">
-																	<div class="jp-volume-bar">
-																		<div>
-																			<div class="jp-volume-bar-value"></div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-														
-													</div>
-													<div class="jp-no-solution">
-														<span>Update Required</span>
-														To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-
-							</div>
-						</div>
-
-					</div>
-		<!----------------------->
+					</form>
 				</div>
 			</div>
 		</div>
 	</div>
+</div>
 
-	<!-- Featured Artist -->
+<!-- Artists -->
 
-	<div class="featured_artist">
-		<div class="background_image" style="{%static 'background-image:url(images/featured_artist_1.jpg)' %}"></div>
-		<div class="container">
-			<div class="row row-lg-eq-height">
-
-				<!-- Featured Artist Content -->
-				<div class="col-lg-6 offset-lg-6">
-					<div class="featured_artist_content">
-						<div class="featured_subtitle">Artist of the month</div>
-						<div class="featured_title"><h1>Jennifer Smith</h1></div>
-						<div class="featured_artist_text">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum, neque ac porttitor scelerisque, nisi nisl tincidunt enim, non aliquet diam neque sed urna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum, neque ac porttitor scelerisque, nisi nisl tincidunt enim, non aliquet diam neque sed urna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum, neque ac porttitor scelerisque, nisi nisl tincidunt enim, non aliquet diam neque sed urna.</p>
-						</div>
-						<div class="button featured_artist_button"><a href="artist">read more</a></div>
-					</div>
-				</div>
-
-			</div>
-		</div>
+<div class="artists">
+	<div class="letters">
+		<ul class="d-flex flex-row align-items-start justify-content-center flex-wrap">
+			<li><a href="#">a</a></li>
+			<li><a href="#">b</a></li>
+			<li><a href="#">c</a></li>
+			<li><a href="#">d</a></li>
+			<li><a href="#">e</a></li>
+			<li><a href="#">f</a></li>
+			<li><a href="#">g</a></li>
+			<li><a href="#">h</a></li>
+			<li><a href="#">i</a></li>
+			<li><a href="#">j</a></li>
+			<li><a href="#">k</a></li>
+			<li><a href="#">l</a></li>
+			<li><a href="#">m</a></li>
+			<li><a href="#">n</a></li>
+			<li><a href="#">o</a></li>
+			<li><a href="#">p</a></li>
+			<li><a href="#">q</a></li>
+			<li><a href="#">r</a></li>
+			<li><a href="#">s</a></li>
+			<li><a href="#">t</a></li>
+			<li><a href="#">u</a></li>
+			<li><a href="#">v</a></li>
+			<li><a href="#">w</a></li>
+			<li><a href="#">x</a></li>
+			<li><a href="#">y</a></li>
+			<li><a href="#">z</a></li>
+		</ul>
 	</div>
-
-	<!-- Newsletter -->
-
-	<div class="newsletter">
+	<div class="artists_container">
 		<div class="container">
 			<div class="row">
+				<div class="col">
+					
+<form>
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <label for="inputgenre">Genre</label>
+      <select id="inputgenre" name="genre" class="form-control">
+        <option selected>Choose...</option>
+        <option value="1"> Adult Contemporary</option>
+        <option value="2">Alternative</option>
+        <option value="3">Americana</option>
+        <option value="4">Dance</option>
+         <option value="4">EDM</option>
+          <option value="4">Electronic</option>
+           <option value="4"> Hip Hop</option>
+            <option value="4"> Holiday</option> 
+            <option value="4">  Indie</option>
+              <option value="4">  Jazz  </option>
+                <option value="4"> K-Pop</option>
+                  <option value="4">  Indie</option>
+                    <option value="4">  Indie</option>
+                      <option value="4">  Indie</option>
+        
+      </select>
+    </div>
+   
 
-				<!-- Newsletter Content -->
-				<div class="col-xl-6">
-					<div class="newsletter_content">
-						<div class="section_title"><h1>Subscribe & Follow</h1></div>
-						<div class="newsletter_text">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum, neque ac porttitor scelerisque.</p>
+    <div class="form-group col-md-4">
+      <label for="inputsoundslike">Soundslike</label>
+      <select id="inputsoundslike" name="soundslike" class="form-control">
+        <option selected>Choose...</option>
+        <option value= "1">3 Doors Down</option>
+        <option value= "2"> 80's Rock/Hair Metal</option>
+        <option value= "3">Abba</option>
+        <option value= "4"> Adam Levine</option>
+        <option value= "5">Adam Lambert</option>
+        <option value= "6">  Adele</option>
+        <option value= "7"> Alan Jackson</option>
+        <option value= "8"> Alanis Morissette</option>
+      </select>
+    </div>
+    
+   
+
+
+    <div class="form-group col-md-4">
+      <label for="inputmood">Mood</label>
+      <select id="inputMood" name="Mood" class="form-control">
+        <option selected>Choose...</option>
+        <option value= "1">Party</option>
+        <option value= "2">love</option>
+        <option value= "3">uplifting</option>
+        <option value= "4">mellow</option>
+        <option value= "5">determined</option>
+        <option value= "6">empowered</option>
+        <option value= "7">angry</option>
+        <option value= "8">sad</option>
+      </select>
+    </div>
+  
+  
+ <div class="form-group col-md-4">
+      <label for="input-type">Type</label>
+      <select id="input-type" name="type" class="form-control">
+        <option selected>Choose...</option>
+        <option value= "1">song</option>
+        <option value= "2">beat</option>
+        <option value= "3">instrumental</option>
+        
+      
+      </select>
+    </div>
+    
+        
+     <div class="form-group col-md-4">
+      <label for="input-gender">Gender</label>
+      <select id="input-gender" name="gender" class="form-control">
+        <option selected>Choose...</option>
+        <option value= "1">Male</option>
+        <option value= "2">Female</option>
+      
+      </select>
+    </div>
+    
+    <div class="form-group col-md-4">
+      <label for="input-tempo">Tempo</label>
+      <select id="input-tempo" name="tempo" class="form-control">
+        <option selected>Choose...</option>
+        <option value="1">all</option>
+        <option value="2">ballad</option>
+        <option value="3">mid</option>
+        <option value="4">up</option>
+      </select>
+    </div>
+ 
+  </div>
+  <br>
+  <button type="button" class="btn btn-primary">Find Songs!</button>
+  <button type="button" class="btn btn-secondary">Reset</button>
+  <br>
+  
+</form>
+					<br>
+					<form action="">
+						<div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
+							<div class="input-group">
+								<input type="search" placeholder="Search by track title or track owner..." aria-describedby="button-addon1" class="form-control border-0 bg-light">
+								<div class="input-group-append">
+									<button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+								</div>
+							</div>
+						</div>
+					</form>
+
+
+
+
+						
+						<br>
+						<div class="artist_name">
+							<h1><a href="{% url 'artist' %}">Michael James</a></h1>
+						</div>
+						<button type="button" class="btn btn-secondary">title</button>
+						<button type="button" class="btn btn-secondary">time</button>
+						<button type="button" class="btn btn-secondary">bmp</button>
+						<button type="button" class="btn btn-secondary">tags</button>
+						<div class="options align-it">
+
+							<!--<button type="button" class="btn btn-secondary">play</button>-->
+							<!--<button type="button" class="btn btn-secondary">buy</button>-->
+							<!--<button type="button" class="btn btn-secondary">save</button>-->
+
+							<div class="dropdown col-12">
+								<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   licensing options:
+  </button>
+								<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+									<a class="dropdown-item" href="#">Action</a>
+									<a class="dropdown-item" href="#">Another action</a>
+									<a class="dropdown-item" href="#">Something else here</a>
+								</div>
+							</div>
 						</div>
 					</div>
-				</div>
+					<div>
+						<audio controls>
+  <source src="horse.ogg" type="audio/ogg">
+  <source src="horse.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
 
-				<!-- Newsletter Form -->
-				<div class="col-xl-6 nl_col">
-					<div class="newsletter_form_container d-flex flex-column align-items-start justify-content-end">
-						<form action="#" class="newsletter_form" id="newsletter_form">
-							<div class="d-flex flex-row align-items-start justify-content-between">
-								<input type="email" class="newsletter_input" placeholder="Your E-mail" required="required">
-								<button class="button newsletter_button"><span>subscribe</span></button>
+
+
+
+						<!--play buy save buttons-->
+
+
+
+
+
+
+
+						<!-- Artist -->
+						<!--<div class="artist">-->
+						<!--	<div class="row">-->
+
+						<!--		 Artist Image -->
+						<!--		<div class="col-lg-6">-->
+						<!--			<div class="artist_image"><img src="images/artist_1.jpg" alt=""></div>-->
+						<!--		</div>-->
+
+						<!--		 Artist Content -->
+						<!--		<div class="col-lg-6 artist_col">-->
+						<!--			<div class="artist_content">-->
+						<!--				<div class="artist_info">-->
+						<!--					<div class="artist_name"><h1><a href="{% url 'artist' %}">Michael James</a></h1></div>-->
+						<!--					<div class="artist_text">-->
+						<!--						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum, neque ac porttitor scelerisque, nisi nisl tincidunt enim, non aliquet diam neque sed urna. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>-->
+						<!--					</div>-->
+						<!--					<div class="artist_store d-flex flex-row align-items-start justify-content-start flex-wrap">-->
+						<!--						<div class="store"><a href="#"><img src="images/appstore.png" alt=""></a></div>-->
+						<!--						<div class="store"><a href="#"><img src="images/googleplay.png" alt=""></a></div>-->
+						<!--					</div>-->
+						<!--				</div>-->
+
+						Player
+						<div class="single_player_container">
+							<div class="single_player">
+								<div class="jp-jplayer jplayer" data-title="Better Days" data-artist="Bensound" data-ancestor=".jp_container_1" data-url="files/bensound-betterdays.mp3"></div>
+								<div class="jp-audio jp_container_1" role="application" aria-label="media player">
+									<div class="jp-gui jp-interface single_player_inner d-flex flex-row align-items-center justify-content-start">
+
+										Player Controls
+										<div class="player_controls_box">
+											<div class="jp-controls-holder player_controls d-flex flex-row align-items-start justify-content-start">
+												<button class="jp-play player_button" tabindex="0"></button>
+												<button class="jp-stop player_button" tabindex="0"></button>
+											</div>
+										</div>
+
+										Progress Bar
+										<div class="player_bars d-flex flex-row align-items-start justify-content-start">
+											<div class="player_progress_box">
+												<div class="jp-current-time" role="timer" aria-label="time">00:00</div>
+												<div class="song_info">
+													<div class="jp-title" aria-label="title"></div>
+												</div>
+												<div class="jp-progress">
+													<div class="jp-seek-bar">
+														<div>
+															<div class="jp-play-bar"><span></span></div>
+														</div>
+													</div>
+												</div>
+												<div class="jp-duration ml-auto" role="timer" aria-label="duration">00:00</div>
+											</div>
+
+											Volume Controls
+											<div class="jp-volume-controls ml-auto">
+												<div class="mute_button">
+													<button class="jp-mute" tabindex="0"></button>
+												</div>
+												<div class="d-flex flex-row align-items-center justify-content-start">
+													<div class="jp-volume-bar">
+														<div>
+															<div class="jp-volume-bar-value"></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+									</div>
+									<div class="jp-no-solution">
+										<span>Update Required</span> To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>
+									</div>
+								</div>
 							</div>
-						</form>
+						</div>
 					</div>
 				</div>
 
 			</div>
 		</div>
-	</div>
-{% endblock %}
-	<!-- Footer -->
 
+
+
+
+	</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+
+
+<!-- Featured Artist -->
+
+<div class="featured_artist">
+	<div class="background_image" style="{%static 'background-image:url(images/featured_artist_1.jpg)' %}"></div>
+	<div class="container">
+		<div class="row row-lg-eq-height">
+
+			<!-- Featured Artist Content -->
+			<div class="col-lg-6 offset-lg-6">
+				<div class="featured_artist_content">
+					<div class="featured_subtitle">Artist of the month</div>
+					<div class="featured_title">
+						<h1>Jennifer Smith</h1>
+					</div>
+					<div class="featured_artist_text">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum, neque ac porttitor scelerisque, nisi nisl tincidunt enim, non aliquet diam neque sed urna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum, neque
+							ac porttitor scelerisque, nisi nisl tincidunt enim, non aliquet diam neque sed urna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum, neque ac porttitor scelerisque, nisi nisl tincidunt enim, non aliquet diam neque sed
+							urna.</p>
+					</div>
+					<div class="button featured_artist_button"><a href="artist">read more</a></div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<!-- Newsletter -->
+
+<div class="newsletter">
+	<div class="container">
+		<div class="row">
+
+			<!-- Newsletter Content -->
+			<div class="col-xl-6">
+				<div class="newsletter_content">
+					<div class="section_title">
+						<h1>Subscribe & Follow</h1>
+					</div>
+					<div class="newsletter_text">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum, neque ac porttitor scelerisque.</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Newsletter Form -->
+			<div class="col-xl-6 nl_col">
+				<div class="newsletter_form_container d-flex flex-column align-items-start justify-content-end">
+					<form action="#" class="newsletter_form" id="newsletter_form">
+						<div class="d-flex flex-row align-items-start justify-content-between">
+							<input type="email" class="newsletter_input" placeholder="Your E-mail" required="required">
+							<button class="button newsletter_button"><span>subscribe</span></button>
+						</div>
+					</form>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}
+<!-- Footer -->

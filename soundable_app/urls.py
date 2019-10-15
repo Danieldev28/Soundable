@@ -27,6 +27,7 @@ urlpatterns = [
     url(r'^blog.html/$', blog, name= 'blog'),
     url(r'^login.html/$', login, name= 'login'),
     url(r'^register.html/$', register, name= 'register'),
+    url(r'^songupload.html/$', songupload, name= 'songupload'),
 
     
 ]

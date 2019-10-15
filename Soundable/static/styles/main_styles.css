@@ -1883,4 +1883,6 @@ section
 	height: 49px;
 	line-height: 49px;
 }
-
+.form-container {
+    text-align:center;
+}
