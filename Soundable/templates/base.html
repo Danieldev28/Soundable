@@ -48,16 +48,23 @@
 										<li><a href="{% url 'index' %}">Home</a></li>
 									<li><a href="{% url 'artists' %}">Artists</a></li>
 									<!--<li><a href="{% url 'songupload' %}">Download Music</a></li>-->
-									<li><a href="blog.html">News</a></li>
+									<li><a href="{% url 'blog' %}">News</a></li>
 									<li><a href="{% url 'contact' %}">Contact</a></li>
+								
+									
+									
 								</ul>
 							</nav>
 
 							<!-- User area -->
 							<div class="log_reg d-flex flex-row align-items-center justify-content-start">
 								<ul class="d-flex flex-row align-items-start justify-content-start">
+									{% if user.is_authenticated %}
+									<li><a href="{% url 'logout' %}">Logout</a></li>
+									{% else %}
 									<li><a href="{% url 'login' %}">Login</a></li>
 									<li><a href="{% url 'register' %}">Register</a></li>
+									{% endif %}
 								</ul>
 
 								<!-- Hamburger -->

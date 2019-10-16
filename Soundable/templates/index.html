@@ -153,7 +153,16 @@
 				</div>
 			</div>
 		</div>
-
+		<hr>
+		{% if messages %}
+		<div>
+			{% for message in messages %}
+			{{ message }}
+			{%endfor%}
+		</div>
+		
+		{% endif %}
+		
 		<!-- Scroll Down -->
 		<div class="scroll_down scroll_down_link" data-scroll-to=".tours">
 			<a href="#"></a>

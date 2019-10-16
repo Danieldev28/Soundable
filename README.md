@@ -19,3 +19,5 @@ Happy coding!
 <!--https://bootstrapious.com/p/bootstrap-search-bar -this is a source-->
 <!--https://unsplash.com/photos/gUK3lA3K7Yo-->
 <!--https://www.w3schools.com/howto/howto_css_social_login.asp-->
+<!--error when creating login page-->
+<!--'function' object has no attribute 'form' django-->

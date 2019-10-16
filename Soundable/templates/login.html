@@ -33,41 +33,19 @@
 <center>
 	<h3>Login Here</h3>
 	
-<form action="login.php" method="post">
-	<div>
-	<label for="username">Username:</label><br>
-  <input type="text" id="username" name="username" placeholder="Type your username">
-  </div>
-  <div>
-    <label for="pass">Password (8 characters minimum):</label><br>
-    <input type="password" id="pass" name="password"
-           minlength="8" required placeholder="Type your password"><br>
-           <label><a href="">forgot your password?</a></label>
-</div>
-  <input type="radio" name="gender" value="male" checked> Male
-  <input type="radio" name="gender" value="female"> Female<br>
-    E-mail:<br>
-<input type="text" name="mail" placeholder="Type your email"><br>
-  <br>
-<input type="submit" value="Login">
-<input type="reset" value="Reset">
-<br>
-<td>Not yet a memeber?<a href="{% url 'register' %}"> Register</a></td>
-<div class="col">
-        <a href="#" class="fb btn">
-          <i class="fa fa-facebook fa-fw"></i> Login with Facebook
-        </a>
-        <br>
-        <a href="#" class="twitter btn">
-          <i class="fa fa-twitter fa-fw"></i> Login with Twitter
-        </a>
-        <br>
-        <a href="#" class="google btn">
-          <i class="fa fa-google fa-fw"></i> Login with Google+
-        </a>
-        <br>
-      </div>
-</form>
+		{% if messages %}
+		<div>
+			{% for message in messages %}
+			{{ message }}
+			{%endfor%}
+		</div>
+		
+		{% endif %}
+	<form method = "POST">
+	  {% csrf_token %}
+			{{ login_form }}
+			<button type ="submit">Login</button>
+		</form>
 
 </center>
 <!--------------------------------------------------------> 

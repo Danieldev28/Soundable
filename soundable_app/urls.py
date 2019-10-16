@@ -18,16 +18,23 @@ from django.contrib import admin
 from Soundable.views import *
 
 
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$' , index, name='index'),
-    url(r'^contact/$', contact, name='contact'),
+    url(r'^contact/$', contact_us, name='contact'),
     url(r'^artists/$', artists, name='artists'),
     url(r'^artist/$', artist, name= 'artist'),
     url(r'^blog.html/$', blog, name= 'blog'),
-    url(r'^login.html/$', login, name= 'login'),
+    # url(r'^login.html/$', login, name= 'login'),
     url(r'^register.html/$', register, name= 'register'),
     url(r'^songupload.html/$', songupload, name= 'songupload'),
+    url(r'^accounts/logout/$', logout, name= 'logout'),
+    url(r'^accounts/login/$', login, name= 'login'),
+    
+    
+    
+
 
     
 ]

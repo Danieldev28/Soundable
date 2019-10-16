@@ -33,26 +33,26 @@
 <center>
 	<h3>Register Here</h3>
 	
-<form action="login.php" method="post">
+<form method="POST">
+  {% csrf_token %}
   First name:<br>
   <input type="text" name="firstname"><br>
   Last name:<br>
   <input type="text" name="lastname"><br>
-  <br>
-  <input type="radio" name="gender" value="male" checked> Male
-  <input type="radio" name="gender" value="female"> Female<br>
-    E-mail:<br>
-<input type="text" name="mail"><br>
+    
+Age: <br />
+<input type="number" name="age"/><br />
+Address: <br />
+<input type="text" name="address"/> <br />
   <label for="phone">Enter your phone number:</label>
   <br>
+<input type="text" id="phone" name="phone" />
 
-
-<input type="tel" id="phone" name="phone"
-       pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-       required><br>
-
-<small>Format: 123-456-7890</small>
 <br>
+E-mail:<br>
+<input type="text" name="mail"><br>
+Password: <br />
+<input type="password" name="password"/>
 <input type="submit" value="Send">
 <input type="reset" value="Reset">
 <br>
