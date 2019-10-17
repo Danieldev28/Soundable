@@ -21,3 +21,9 @@ Happy coding!
 <!--https://www.w3schools.com/howto/howto_css_social_login.asp-->
 <!--error when creating login page-->
 <!--'function' object has no attribute 'form' django-->
+<!--error-->
+<!--name 'make_password' is not defined-->
+<!--user profile error! 3 sources-->
+<!--AttributeError at /accounts/profile/-->
+<!--how to check confirm password field in form without reloading page-stackoverflow eresource answer-->
+<!--https://stackoverflow.com/questions/21727317/how-to-check-confirm-password-field-in-form-without-reloading-page-->

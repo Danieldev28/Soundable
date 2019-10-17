@@ -11,6 +11,7 @@
 <link href="{%static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %} " rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="{%static 'styles/contact.css' %}">
 <link rel="stylesheet" type="text/css" href="{%static 'styles/contact_responsive.css' %}">
+<link rel="stylesheet" href="{%static 'css/style.css'%}"  type="text/css"/>
 {%endblock%}
 {% block content %}
 
@@ -32,15 +33,15 @@
 	</div>
 <center>
 <h1>Licensing</h1>
+</center>
 
-
-<div class="form-container">
+<div class="form-container submit-your-song">
  
     <div class "row">
       	<div class="col-xl-6 center">
 <form>
   <div class="form-row">
-    <div class="form-group col-md-4" id="col-4">
+    <div class="form-group col-md-4">
       <label for="inputgenre">Genre</label>
       <select id="inputgenre" name="genretype" class="form-control">
         <option selected>Choose...</option>
@@ -147,7 +148,7 @@
   </div>
 <div class="form-group">
     <label for="time">Time</label>
-    <input type="text" name="Time" class="form-control" id="sopngtitle" placeholder="Time in minutes and seconds">
+    <input type="text" name="Time" class="form-control" id="songtitle" placeholder="Time in minutes and seconds">
   </div>
 
   <!--Upload a file to display with your recipe!-->
@@ -160,7 +161,7 @@
   </div>
   </div>
 </div>
-</center>
+
 	
 
 <!--------------------------------------------------------> 

@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from Soundable.views import *
+from Soundable.views import user_profile
 
 
 
@@ -31,6 +32,7 @@ urlpatterns = [
     url(r'^songupload.html/$', songupload, name= 'songupload'),
     url(r'^accounts/logout/$', logout, name= 'logout'),
     url(r'^accounts/login/$', login, name= 'login'),
+    url(r'^accounts/profile/$', user_profile, name= 'profile'),
     
     
     

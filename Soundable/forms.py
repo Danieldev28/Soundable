@@ -20,8 +20,17 @@ class CustomUserChangeForm(UserChangeForm):
         fields=('username', 'email')
         
 class UserLoginForm(forms.Form):
+    """Form used to register a new user"""
     username = forms.CharField()
     password = forms.CharField(widget=forms.PasswordInput)
+
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        username = self.cleaned_datat.get('username')
+        if User.objects.filter(email=email).exclude(username=username):
+                raise forms.ValidationError('Your email address must be unique, try another email')
+        return email
+  
     
 class UserContactForm(forms.Form):
     

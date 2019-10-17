@@ -2,6 +2,7 @@ from django.shortcuts import render, HttpResponse, redirect, reverse
 from django.contrib import auth, messages
 from django.contrib.auth.hashers import make_password
 from Soundable.forms import UserLoginForm
+from django.contrib.auth.decorators import login_required
 from Soundable.models import *
 
 
@@ -11,6 +12,7 @@ def index(request):
     return render(request,'index.html')
 
 def contact_us(request):
+    """Contact submission form to database"""
     if request.method == "POST":
         print(request.POST.get('form'))
         if request.POST.get('form') == 'contact':
@@ -41,6 +43,7 @@ def blog(request):
 
 
 def register(request):
+    """Register the user"""
     if request.method == "POST":
         user = CustomUser()
         user.first_name = request.POST.get('firstname')
@@ -57,6 +60,7 @@ def register(request):
 def songupload(request):
     return render(request,'songupload.html')
 
+@login_required
 def logout(request):
     """Log the user out"""
     auth.logout(request)
@@ -82,4 +86,7 @@ def login(request):
         login_form = UserLoginForm()
     return render(request,'login.html', {'login_form': login_form})
     
-
+def user_profile(request):
+    """the users profile page"""
+    user = request.user
+    return render(request,'profile.html',{"profile": user})

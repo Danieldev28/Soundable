@@ -32,7 +32,7 @@
 	</div>
 <center>
 	<h3>Register Here</h3>
-	
+	<p>If you already have an account, you can <a href="{% url 'login' %}">sign in</a></p>
 <form method="POST">
   {% csrf_token %}
   First name:<br>
@@ -52,27 +52,30 @@ Address: <br />
 E-mail:<br>
 <input type="text" name="mail"><br>
 Password: <br />
-<input type="password" name="password"/>
+<input type="password" name="password" id="password" onkeyup='check();'/><br />
+Confirm Password: <br />
+ <input type="password" name="confirm_password" id="confirm_password" onkeyup='check();'/> <br />
+  <span id='message'></span><br />
 <input type="submit" value="Send">
 <input type="reset" value="Reset">
 <br>
- <div class="col">
-        <a href="#" class="fb btn">
-          <i class="fa fa-facebook fa-fw"></i> Login with Facebook
-        </a>
-        <br>
-        <a href="#" class="twitter btn">
-          <i class="fa fa-twitter fa-fw"></i> Login with Twitter
-        </a>
-        <br>
-        <a href="#" class="google btn">
-          <i class="fa fa-google fa-fw"></i> Login with Google+
-        </a>
-        <br>
-      </div>
+ 
 <td>Not yet a memeber?<a href=""> Register</a></td>
 
 </form>
+
+<script type="text/javascript">
+  var check = function() {
+  if (document.getElementById('password').value ==
+    document.getElementById('confirm_password').value) {
+    document.getElementById('message').style.color = 'green';
+    document.getElementById('message').innerHTML = 'matching';
+  } else {
+    document.getElementById('message').style.color = 'red';
+    document.getElementById('message').innerHTML = 'not matching';
+  }
+}
+</script>
 
 </center>
 <!--------------------------------------------------------> 

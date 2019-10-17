@@ -60,6 +60,8 @@
 							<div class="log_reg d-flex flex-row align-items-center justify-content-start">
 								<ul class="d-flex flex-row align-items-start justify-content-start">
 									{% if user.is_authenticated %}
+										<li><a href="{% url 'profile' %}">Profile</a></li>
+										<li><a href="{% url 'songupload' %}">Song Submission</a></li>
 									<li><a href="{% url 'logout' %}">Logout</a></li>
 									{% else %}
 									<li><a href="{% url 'login' %}">Login</a></li>
