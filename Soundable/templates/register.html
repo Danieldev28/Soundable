@@ -15,7 +15,6 @@
 {% block content %}
 
 <!-- Home/header -->
-
 	<div class="home">
 		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{%static 'images/contact.jpg' %}" data-speed="0.8"></div>
 		<div class="home_container">
@@ -40,27 +39,27 @@
   Last name:<br>
   <input type="text" name="lastname"><br>
     
-Age: <br />
+<lable>Age:</lable> <br />
 <input type="number" name="age"/><br />
-Address: <br />
+<label>Address:</label> <br />
 <input type="text" name="address"/> <br />
   <label for="phone">Enter your phone number:</label>
   <br>
 <input type="text" id="phone" name="phone" />
 
 <br>
-E-mail:<br>
+<label>E-mail:</label><br>
 <input type="text" name="mail"><br>
-Password: <br />
+<label>Password:</label> <br />
 <input type="password" name="password" id="password" onkeyup='check();'/><br />
-Confirm Password: <br />
+<label>Confirm Password:</label> <br />
  <input type="password" name="confirm_password" id="confirm_password" onkeyup='check();'/> <br />
   <span id='message'></span><br />
 <input type="submit" value="Send">
 <input type="reset" value="Reset">
 <br>
  
-<td>Not yet a memeber?<a href=""> Register</a></td>
+
 
 </form>
 
@@ -80,8 +79,5 @@ Confirm Password: <br />
 </center>
 <!--------------------------------------------------------> 
 
-
 {%endblock%}
-
-
 <!--footer-->

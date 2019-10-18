@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse, redirect, reverse
+from django.shortcuts import render, HttpResponse, redirect, reverse, get_object_or_404
 from django.contrib import auth, messages
 from django.contrib.auth.hashers import make_password
 from Soundable.forms import UserLoginForm
@@ -58,7 +58,33 @@ def register(request):
     return render(request,'register.html')
     
 def songupload(request):
-    return render(request,'songupload.html')
+    genre_list = genre.objects.all()
+    soundslike_list = soundslike.objects.all()
+    mood_list = mood.objects.all()
+    Type_list = Type.objects.all()
+    # gender_list = gender.objects.all()
+    # tempo_list =tempo.objects.all()
+    # song_list = songtitle.objects.all()
+    
+    if request.method == "POST":
+        # if form.is_valid():
+            user = song_table()
+            """"what are the fields which i need to supply?"""
+            user.genre =  get_object_or_404(genre, id=request.POST.get('genretype')) 
+            user.soundslike = get_object_or_404(soundslike, id=request.POST.get('soundslike'))
+            user.Type = get_object_or_404(Type, id=request.POST.get('music-type'))
+            user.gender = get_object_or_404(gender, id=request.POST.get('gender'))
+            user.tempo = get_object_or_404(tempo, id=request.POST.get('tempo'))
+            user.songtitle = request.POST.get('songtitle')
+            user.Time = request.POST.get('Time')
+            user.Upload_Music = request.POST.get('upload')
+            user.gender = get_object_or_404(gender, id=request.POST.get('gender'))
+            user.songtitle = request.POST.get('songtitle')
+            user.lyrics = request.POST.get('lyric-form')
+            user.time = request.POST.get('time')
+            user.save()
+            print("user.genre")
+    return render(request,'songupload.html', {'genre':genre_list,'soundslike':soundslike_list,'mood':mood_list,'Type':Type_list, })
 
 @login_required
 def logout(request):
