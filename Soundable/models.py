@@ -62,7 +62,7 @@ class Type(models.Model):
         
 class song_table(models.Model):
     name = models.CharField(max_length=50)
-    lyrics = models.CharField(max_length=7000)
+    lyrics = models.CharField(max_length=7000, null=True)
     time = models.IntegerField()
     downloadfile = models.FileField(upload_to='songs/')
     genre = models.ForeignKey(genre)
@@ -71,7 +71,7 @@ class song_table(models.Model):
     gender = models.ForeignKey(gender)
     mood = models.ForeignKey(mood)
     Type = models.ForeignKey(Type)
-    buyer = models.ForeignKey(CustomUser, related_name="buyer_user")
+    buyer = models.ForeignKey(CustomUser, related_name="buyer_user", null=True)
     is_active = models.BooleanField(default=True)
     creator = models.ForeignKey(CustomUser, related_name="creator_user")
     

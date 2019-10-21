@@ -15,7 +15,7 @@
 {% block content %}
 
 	 <!--Home -->
-
+<!--<p>First Name*:<b>{{profile.first_name}}</b></p><br>--move later*********-->
 	<div class="home">
 		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{%static 'images/contact.jpg' %}" data-speed="0.8"></div>
 		<div class="home_container">
@@ -32,6 +32,71 @@
 		</div>
 	</div>
 
+<div class="app">
+	<h1 class="profile-heading">My Profile</h1>
+	<div class="container">
+		<div class="row row-lg-eq-height">
+
+			 <!--App Image -->
+			<div class="col-lg-6 order-lg-1 order-2 app_col text-center">
+				<div class="app_image">
+					<img src="{%static 'images/jason-leung-Xaanw0s0pMk-unsplash.jpg' %}" alt="">
+					 <!--<div class= "container">-->
+<!--	<div class="row">-->
+		<!--<div class="col-6">-->
+
+<p>First Name*:<b>{{profile.first_name}}</p>
+<p>Last Name*:<b>{{profile.last_name}}</p>
+<p>Email*:<b>{{profile.email}}</p>
+<p>Adress*:<b>{{profile.address}}</p>
+<p>Age*:<b>{{profile.age}}</p>
+<p>Phone*:<b>{{profile.phone}}</p>
+<td>Update Account Info</td><a href="{% url 'register' %}">Myaccount</a></td>
+
+<!--<input type="text" name={{profile.first_name}}"><br>-->
+<!--<label>Last Name*:</label><br>-->
+<!--<input type="text" name="name"><br-->
+<!--<lable>Age:</lable> <br />-->
+<!--<input type="number" name="age"/><br />-->
+<!--<label>Address:</label> <br />-->
+<!--<input type="text" name="address"/> <br />-->
+<!--<label>E-mail*:</label><br>-->
+<!--<input type="text" name="mail"><br>-->
+<!--<label>Password*:</label> <br />-->
+<!--<input type="password" name="password" id="password" onkeyup='check();'/>-->
+<!--<br>-->
+<!--<input type="submit" value="Update Contact Info">-->
+<!--<br>-->
+<!--</div>-->
+				</div>
+			</div>
+
+			 <!--App Content -->
+			<!--<div class="col-lg-6 order-lg-2 order-1">-->
+			<!--	<div class="app_content d-flex flex-column align-items-start justify-content-center">-->
+			<!--		<div class="section_title">-->
+			<!--			<h1></h1>-->
+			<!--		</div>-->
+			<!--		<div class="app_text">-->
+						<!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum, neque ac porttitor scelerisque, nisi nisl tincidunt enim, non aliquet diam neque sed urna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante-->
+						<!--	ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse nec faucibus velit. Quisque eleifend orci ipsum, a bibendum lacus suscipit sit amet</p>-->
+			<!--		</div>-->
+			<!--		<div class="stores d-flex flex-row align-items-start justify-content-start flex-wrap">-->
+			<!--			<div class="store"><a href="#"><img src="{%static 'images/appstore.png' %}" alt=""></a></div>-->
+			<!--			<div class="store"><a href="#"><img src="{%static 'images/googleplay.png' %}" alt=""></a></div>-->
+			<!--		</div>-->
+			<!--	</div>-->
+			<!--</div>-->
+
+		</div>
+	</div>
+</div>
+
+
+<div>
+</div>
+
+
 	 <!--Contact -->
 
 		<!--		 Contact Content -->
@@ -42,52 +107,21 @@
 
 	 <!--Contact Map -->
 
-	<div class="contact_map">
+	<!--<div class="contact_map">-->
 
 		 <!--Google Map -->
 		
-		<div class="map">
-			<div id="google_map" class="google_map">
-				<div class="map_container">
-					<div id="map"></div>
-				</div>
-			</div>
-		</div>
+	<!--	<div class="map">-->
+	<!--		<div id="google_map" class="google_map">-->
+	<!--			<div class="map_container">-->
+	<!--				<div id="map"></div>-->
+	<!--			</div>-->
+	<!--		</div>-->
+	<!--	</div>-->
 
-	</div>
+	<!--</div>-->
 
-	 <!--Newsletter -->
-
-	<div class="newsletter">
-		<div class="container">
-			<div class="row">
-
-				 <!--Newsletter Content -->
-				<div class="col-xl-6">
-					<div class="newsletter_content">
-						<div class="section_title"><h1>Subscribe & Follow</h1></div>
-						<div class="newsletter_text">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum, neque ac porttitor scelerisque.</p>
-						</div>
-					</div>
-				</div>
-
-				 <!--Newsletter Form -->
-				<div class="col-xl-6 nl_col">
-					<div class="newsletter_form_container d-flex flex-column align-items-start justify-content-end">
-						<form method="POST" class="newsletter_form" id="newsletter_form">
-							{% csrf_token %}
-							<div class="d-flex flex-row align-items-start justify-content-between">
-								<input name="newsletter" type="email" class="newsletter_input" placeholder="Your E-mail" required="required">
-								<input type="hidden" name="form" value="subscribe"/>
-								<button class="button newsletter_button"><span>subscribe</span></button>
-							</div>
-						</form>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</div>
+	<!--</div>-->
 {% endblock %}
 	 <!--Footer -->
+	

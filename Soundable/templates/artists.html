@@ -96,20 +96,9 @@
       <label for="inputgenre">Genre</label>
       <select id="inputgenre" name="genre" class="form-control">
         <option selected>Choose...</option>
-        <option value="1"> Adult Contemporary</option>
-        <option value="2">Alternative</option>
-        <option value="3">Americana</option>
-        <option value="4">Dance</option>
-         <option value="4">EDM</option>
-          <option value="4">Electronic</option>
-           <option value="4"> Hip Hop</option>
-            <option value="4"> Holiday</option> 
-            <option value="4">  Indie</option>
-              <option value="4">  Jazz  </option>
-                <option value="4"> K-Pop</option>
-                  <option value="4">  Indie</option>
-                    <option value="4">  Indie</option>
-                      <option value="4">  Indie</option>
+        {%  for genre in genre %}
+                      <option value="{{genre.id}}">  {{genre.name}}</option>
+        {% endfor %}
         
       </select>
     </div>
@@ -119,32 +108,22 @@
       <label for="inputsoundslike">Soundslike</label>
       <select id="inputsoundslike" name="soundslike" class="form-control">
         <option selected>Choose...</option>
-        <option value= "1">3 Doors Down</option>
-        <option value= "2"> 80's Rock/Hair Metal</option>
-        <option value= "3">Abba</option>
-        <option value= "4"> Adam Levine</option>
-        <option value= "5">Adam Lambert</option>
-        <option value= "6">  Adele</option>
-        <option value= "7"> Alan Jackson</option>
-        <option value= "8"> Alanis Morissette</option>
+    {% for soundslike in soundslike %}
+            <option value="{{soundslike.id}}"> {{soundslike.name}}</option>
+           
+        {% endfor %}
       </select>
     </div>
     
-   
-
 
     <div class="form-group col-md-4">
       <label for="inputmood">Mood</label>
       <select id="inputMood" name="Mood" class="form-control">
-        <option selected>Choose...</option>
-        <option value= "1">Party</option>
-        <option value= "2">love</option>
-        <option value= "3">uplifting</option>
-        <option value= "4">mellow</option>
-        <option value= "5">determined</option>
-        <option value= "6">empowered</option>
-        <option value= "7">angry</option>
-        <option value= "8">sad</option>
+      	  <option selected>Choose...</option>
+            {% for mood in mood %}
+            <option value="{{mood.id}}"> {{mood.name}}</option>
+           
+        {% endfor %}
       </select>
     </div>
   
@@ -152,11 +131,11 @@
  <div class="form-group col-md-4">
       <label for="input-type">Type</label>
       <select id="input-type" name="type" class="form-control">
-        <option selected>Choose...</option>
-        <option value= "1">song</option>
-        <option value= "2">beat</option>
-        <option value= "3">instrumental</option>
-        
+      	<option selected>Choose...</option>
+         {% for Type in Type %}
+            <option value="{{Type.id}}"> {{Type.name}}</option>
+           
+        {% endfor %}
       
       </select>
     </div>
@@ -166,8 +145,10 @@
       <label for="input-gender">Gender</label>
       <select id="input-gender" name="gender" class="form-control">
         <option selected>Choose...</option>
-        <option value= "1">Male</option>
-        <option value= "2">Female</option>
+             {% for gender in gender %}
+            <option value="{{gender.id}}"> {{gender.name}}</option>
+           
+        {% endfor %}
       
       </select>
     </div>
@@ -176,10 +157,10 @@
       <label for="input-tempo">Tempo</label>
       <select id="input-tempo" name="tempo" class="form-control">
         <option selected>Choose...</option>
-        <option value="1">all</option>
-        <option value="2">ballad</option>
-        <option value="3">mid</option>
-        <option value="4">up</option>
+           {% for tempo in tempo %}
+            <option value="{{tempo.id}}"> {{tempo.name}}</option>
+           
+        {% endfor %}
       </select>
     </div>
  
