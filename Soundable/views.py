@@ -37,6 +37,7 @@ def artists(request):
     Type_list = Type.objects.all()
     gender_list = gender.objects.all()
     tempo_list = tempo.objects.all()
+    songs = song_table.objects.all()
           
     if request.method == "POST":
             # if form.is_valid():
@@ -52,7 +53,8 @@ def artists(request):
                 user.songtitle = request.POST.get('songtitle')
                 user.save()
                 print("user.genre")
-    return render(request,'artists.html', {'genre':genre_list,'soundslike':soundslike_list,'mood':mood_list,'Type':Type_list,'gender':gender_list,'tempo':tempo_list,})
+    return render(request,'artists.html', {'genre':genre_list,'soundslike':soundslike_list,'mood':mood_list,
+                                            'Type':Type_list,'gender':gender_list,'tempo':tempo_list, 'songs' : songs})
       
 
    
@@ -108,7 +110,7 @@ def songupload(request):
             user.time = request.POST.get('Time')
             user.creator = request.user
             user.name = request.POST.get('songtitle')
-            user.downloadfile = request.POST.get('upload')
+            user.downloadfile = request.FILES['upload']
             user.save()
             print("user.genre")
     return render(request,'songupload.html', {'genre':genre_list,'soundslike':soundslike_list,'mood':mood_list,'Type':Type_list,'gender':gender_list,'tempo':tempo_list, })
