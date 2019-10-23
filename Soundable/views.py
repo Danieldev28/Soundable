@@ -58,8 +58,9 @@ def artists(request):
       
 
    
-def artist(request):
-    return render(request,'artist.html')
+def artist(request, id):
+    song = get_object_or_404(song_table, pk = id)
+    return render(request,'artist.html', {'song':song})
     
 
 def blog(request):
@@ -147,3 +148,7 @@ def user_profile(request):
 
 def myaccount(request):
     return render(request,'myaccount.html')
+    
+
+def shop(request):
+    return render(request,'shop.html')

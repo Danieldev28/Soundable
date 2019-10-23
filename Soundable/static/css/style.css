@@ -49,3 +49,7 @@ a:hover
      cursor:pointer; 
      
 }
+
+.align-it-center{
+    text-align:center;
+}

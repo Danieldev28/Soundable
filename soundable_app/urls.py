@@ -26,8 +26,8 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$' , index, name='index'),
     url(r'^contact/$', contact_us, name='contact'),
-    url(r'^artists/$', artists, name='artists'),
-    url(r'^artist/$', artist, name= 'artist'),
+    url(r'^songs/$', artists, name='songs'),
+    url(r'^artist/(?P<id>\d+)/$', artist),
     url(r'^blog.html/$', blog, name= 'blog'),
     # url(r'^login.html/$', login, name= 'login'),
     url(r'^register.html/$', register, name= 'register'),
@@ -35,6 +35,7 @@ urlpatterns = [
     url(r'^accounts/logout/$', logout, name= 'logout'),
     url(r'^accounts/login/$', login, name= 'login'),
     url(r'^accounts/profile/$', user_profile, name= 'profile'),
+    url(r'^shop.html/$',shop, name= 'shop'),
     
     
     
