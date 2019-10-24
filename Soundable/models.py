@@ -65,15 +65,15 @@ class song_table(models.Model):
     lyrics = models.CharField(max_length=7000, null=True)
     time = models.IntegerField()
     downloadfile = models.FileField(upload_to='songs/')
-    genre = models.ForeignKey(genre)
-    soundslike = models.ForeignKey(soundslike)
-    tempo = models.ForeignKey(tempo)
-    gender = models.ForeignKey(gender)
-    mood = models.ForeignKey(mood)
-    Type = models.ForeignKey(Type)
-    buyer = models.ForeignKey(CustomUser, related_name="buyer_user", null=True)
+    genre = models.ForeignKey(genre, on_delete=models.CASCADE)
+    soundslike = models.ForeignKey(soundslike, on_delete=models.CASCADE)
+    tempo = models.ForeignKey(tempo, on_delete=models.CASCADE)
+    gender = models.ForeignKey(gender, on_delete=models.CASCADE)
+    mood = models.ForeignKey(mood, on_delete=models.CASCADE)
+    Type = models.ForeignKey(Type, on_delete=models.CASCADE)
+    buyer = models.ForeignKey(CustomUser, related_name="buyer_user", null=True, on_delete=models.CASCADE)
     is_active = models.BooleanField(default=True)
-    creator = models.ForeignKey(CustomUser, related_name="creator_user")
+    creator = models.ForeignKey(CustomUser, related_name="creator_user", on_delete=models.CASCADE)
     
     def __str__(self):
         return (self.name)
@@ -81,7 +81,7 @@ class song_table(models.Model):
 class userprofile_table(models.Model):
     image = models.CharField(max_length=100)
     description = models.CharField(max_length=100)
-    user = models.ForeignKey(CustomUser)
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     
     
     def __str__(self):
@@ -89,9 +89,9 @@ class userprofile_table(models.Model):
 
 class purchases(models.Model):
     billing_address = models.CharField(max_length=500)
-    song = models.ForeignKey(song_table)
+    song = models.ForeignKey(song_table, on_delete=models.CASCADE)
     price = models.IntegerField()
-    purchased_by = models.ForeignKey(CustomUser)
+    purchased_by = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     date_of_purchase = models.DateTimeField(auto_now_add=True)
     is_active = models.BooleanField(default=True)
     

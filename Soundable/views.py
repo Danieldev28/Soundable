@@ -3,6 +3,7 @@ from django.contrib import auth, messages
 from django.contrib.auth.hashers import make_password
 from Soundable.forms import UserLoginForm
 from django.contrib.auth.decorators import login_required
+from .filters import UserFilter
 from Soundable.models import *
 
 
@@ -38,7 +39,13 @@ def artists(request):
     gender_list = gender.objects.all()
     tempo_list = tempo.objects.all()
     songs = song_table.objects.all()
-          
+    print()
+    if request.method == 'get':
+        user_list = song_table.objects.all()
+        user_filter = UserFilter(request.GET, queryset=user_list)
+    else:
+        user_list = song_table.objects.all()
+        user_filter = UserFilter(request.GET, queryset=user_list)
     if request.method == "POST":
             # if form.is_valid():
                 user = song_table()
@@ -54,7 +61,7 @@ def artists(request):
                 user.save()
                 print("user.genre")
     return render(request,'artists.html', {'genre':genre_list,'soundslike':soundslike_list,'mood':mood_list,
-                                            'Type':Type_list,'gender':gender_list,'tempo':tempo_list, 'songs' : songs})
+                                            'Type':Type_list,'gender':gender_list,'tempo':tempo_list, 'songs' : songs, 'filter':user_filter})
       
 
    
@@ -152,3 +159,4 @@ def myaccount(request):
 
 def shop(request):
     return render(request,'shop.html')
+    

@@ -38,7 +38,6 @@ urlpatterns = [
     url(r'^shop.html/$',shop, name= 'shop'),
     
     
-    
 
 
     

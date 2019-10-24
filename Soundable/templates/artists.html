@@ -1,4 +1,4 @@
-<!DOCTYPE html> {% extends 'base.html' %} {% load static %} {% block head %}
+<!DOCTYPE html> {% extends 'base.html' %} {% load static %}{% load crispy_forms_tags %} {% block head %}
 <title>Artists</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -90,87 +90,96 @@
 			<div class="row">
 				<div class="col">
 					
-<form>
-  <div class="form-row">
-    <div class="form-group col-md-4">
-      <label for="inputgenre">Genre</label>
-      <select id="inputgenre" name="genre" class="form-control">
-        <option selected>Choose...</option>
-        {%  for genre in genre %}
-                      <option value="{{genre.id}}">  {{genre.name}}</option>
-        {% endfor %}
+<!--<form>-->
+<!--  <div class="form-row">-->
+<!--    <div class="form-group col-md-4">-->
+<!--      <label for="inputgenre">Genre</label>-->
+<!--      <select id="inputgenre" name="genre" class="form-control">-->
+<!--        <option selected>Choose...</option>-->
+<!--        {%  for genre in genre %}-->
+<!--                      <option value="{{genre.id}}">  {{genre.name}}</option>-->
+<!--        {% endfor %}-->
         
-      </select>
-    </div>
+<!--      </select>-->
+<!--    </div>-->
    
 
-    <div class="form-group col-md-4">
-      <label for="inputsoundslike">Soundslike</label>
-      <select id="inputsoundslike" name="soundslike" class="form-control">
-        <option selected>Choose...</option>
-    {% for soundslike in soundslike %}
-            <option value="{{soundslike.id}}"> {{soundslike.name}}</option>
+<!--    <div class="form-group col-md-4">-->
+<!--      <label for="inputsoundslike">Soundslike</label>-->
+<!--      <select id="inputsoundslike" name="soundslike" class="form-control">-->
+<!--        <option selected>Choose...</option>-->
+<!--    {% for soundslike in soundslike %}-->
+<!--            <option value="{{soundslike.id}}"> {{soundslike.name}}</option>-->
            
-        {% endfor %}
-      </select>
-    </div>
+<!--        {% endfor %}-->
+<!--      </select>-->
+<!--    </div>-->
     
 
-    <div class="form-group col-md-4">
-      <label for="inputmood">Mood</label>
-      <select id="inputMood" name="Mood" class="form-control">
-      	  <option selected>Choose...</option>
-            {% for mood in mood %}
-            <option value="{{mood.id}}"> {{mood.name}}</option>
+<!--    <div class="form-group col-md-4">-->
+<!--      <label for="inputmood">Mood</label>-->
+<!--      <select id="inputMood" name="Mood" class="form-control">-->
+<!--      	  <option selected>Choose...</option>-->
+<!--            {% for mood in mood %}-->
+<!--            <option value="{{mood.id}}"> {{mood.name}}</option>-->
            
-        {% endfor %}
-      </select>
-    </div>
+<!--        {% endfor %}-->
+<!--      </select>-->
+<!--    </div>-->
   
   
- <div class="form-group col-md-4">
-      <label for="input-type">Type</label>
-      <select id="input-type" name="type" class="form-control">
-      	<option selected>Choose...</option>
-         {% for Type in Type %}
-            <option value="{{Type.id}}"> {{Type.name}}</option>
+<!-- <div class="form-group col-md-4">-->
+<!--      <label for="input-type">Type</label>-->
+<!--      <select id="input-type" name="type" class="form-control">-->
+<!--      	<option selected>Choose...</option>-->
+<!--         {% for Type in Type %}-->
+<!--            <option value="{{Type.id}}"> {{Type.name}}</option>-->
            
-        {% endfor %}
+<!--        {% endfor %}-->
       
-      </select>
-    </div>
+<!--      </select>-->
+<!--    </div>-->
     
         
-     <div class="form-group col-md-4">
-      <label for="input-gender">Gender</label>
-      <select id="input-gender" name="gender" class="form-control">
-        <option selected>Choose...</option>
-             {% for gender in gender %}
-            <option value="{{gender.id}}"> {{gender.name}}</option>
+<!--     <div class="form-group col-md-4">-->
+<!--      <label for="input-gender">Gender</label>-->
+<!--      <select id="input-gender" name="gender" class="form-control">-->
+<!--        <option selected>Choose...</option>-->
+<!--             {% for gender in gender %}-->
+<!--            <option value="{{gender.id}}"> {{gender.name}}</option>-->
            
-        {% endfor %}
+<!--        {% endfor %}-->
       
-      </select>
-    </div>
+<!--      </select>-->
+<!--    </div>-->
     
-    <div class="form-group col-md-4">
-      <label for="input-tempo">Tempo</label>
-      <select id="input-tempo" name="tempo" class="form-control">
-        <option selected>Choose...</option>
-           {% for tempo in tempo %}
-            <option value="{{tempo.id}}"> {{tempo.name}}</option>
+<!--    <div class="form-group col-md-4">-->
+<!--      <label for="input-tempo">Tempo</label>-->
+<!--      <select id="input-tempo" name="tempo" class="form-control">-->
+<!--        <option selected>Choose...</option>-->
+<!--           {% for tempo in tempo %}-->
+<!--            <option value="{{tempo.id}}"> {{tempo.name}}</option>-->
            
-        {% endfor %}
-      </select>
-    </div>
+<!--        {% endfor %}-->
+<!--      </select>-->
+<!--    </div>-->
  
-  </div>
-  <br>
-  <button type="button" class="btn btn-primary">Find Songs!</button>
-  <button type="button" class="btn btn-secondary">Reset</button>
-  <br>
+<!--  </div>-->
+<!--  <br>-->
+<!--  <button type="button" class="btn btn-primary">Find Songs!</button>-->
+<!--  <button type="button" class="btn btn-secondary">Reset</button>-->
+<!--  <br>-->
   
-</form>
+<!--</form>-->
+
+<form method="get">
+	<h2>search</h2>
+    {{ filter.form|crispy }}
+    <div class="form-group col-md-6 mb-0">
+        {{ filter.form.genre__name|as_crispy_field }}
+      </div>
+    <button type="submit">Search</button>
+  </form>
 					<br>
 					<form action="">
 						<div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
@@ -185,7 +194,7 @@
 
 					<div class="container">
 						<div class="row">
-							{% for song in songs %}
+							{% for song in filter.qs %}
 							<div class="col-12 border-box">
 						<br>
 						<div class="artist_name">
@@ -197,10 +206,11 @@
 						<button type="button" class="btn btn-secondary">{{song.tempo.name}}</button>
 						<!--<button type="button" class="btn btn-secondary">{{song.name}}</button>-->
 						<div class="options align-it">
-
+										
 							<button type="button" class="btn btn-secondary">play</button>
-							<button type="button" class="btn btn-secondary"><a href="{{% url 'shop'%}}"></a>Buy</button>
+						 <button type="button" id="buy-button" class="btn btn-secondary"><a href="{% url 'shop' %}">Buy</button></a>
 							<button type="button" class="btn btn-secondary">save</button>
+							
 
 							<div class="dropdown col-12">
 								<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

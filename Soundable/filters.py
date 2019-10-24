@@ -4,4 +4,6 @@ import django_filters
 class UserFilter(django_filters.FilterSet):
     class Meta:
         model = song_table
-        fields = ['username', 'first_name', 'last_name', ]
+        fields = ['genre__name', 'soundslike__name',  'mood__name','Type__name','gender__name','tempo__name']
+        
+
