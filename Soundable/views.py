@@ -1,7 +1,7 @@
 from django.shortcuts import render, HttpResponse, redirect, reverse, get_object_or_404
 from django.contrib import auth, messages
 from django.contrib.auth.hashers import make_password
-from Soundable.forms import UserLoginForm
+from Soundable.forms import UserLoginForm, EditProfileForm
 from django.contrib.auth.decorators import login_required
 from .filters import UserFilter
 from Soundable.models import *
@@ -152,6 +152,15 @@ def user_profile(request):
     """the users profile page"""
     user = request.user
     return render(request,'profile.html',{"profile": user})
+    
+def edit_profile(request):
+    user = request.user
+    form = EditProfileForm(request.POST or None, instance=user)
+    if form.is_valid():
+        form.save()
+        return redirect(user_profile)
+    return render(request,'edit_profile.html',{"profile": user, 'form' : form})
+
 
 def myaccount(request):
     return render(request,'myaccount.html')
@@ -159,4 +168,6 @@ def myaccount(request):
 
 def shop(request):
     return render(request,'shop.html')
+    
+
     

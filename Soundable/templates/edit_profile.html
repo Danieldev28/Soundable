@@ -40,18 +40,12 @@
 			 <!--App Image -->
 			<div class="col-lg-6 order-lg-1 order-2 app_col text-center">
 				<div class="app_image">
-					<img src="{%static 'images/jason-leung-Xaanw0s0pMk-unsplash.jpg' %}" alt="">
-					 <!--<div class= "container">-->
-<!--	<div class="row">-->
-		<!--<div class="col-6">-->
+					<form method="POST">
+						{% csrf_token %}
+						{{form.as_p}}
+						<input type="submit" value="Submit"/>
+					</form>
 
-<p>First Name*:<b>{{profile.first_name}}</p>
-<p>Last Name*:<b>{{profile.last_name}}</p>
-<p>Email*:<b>{{profile.email}}</p>
-<p>Adress*:<b>{{profile.address}}</p>
-<p>Age*:<b>{{profile.age}}</p>
-<p>Phone*:<b>{{profile.phone}}</p>
-<td>Update Account Info</td><a href="{% url 'edit_profile' %}">Edit account</a></td>
 				</div>
 			</div>
 

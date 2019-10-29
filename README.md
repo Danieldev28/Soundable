@@ -113,3 +113,5 @@ In addition, if it is not obvious, you should also describe how to run your code
 <!--https://www.bensound.com/-music source-->
 https://simpleisbetterthancomplex.com/tutorial/2016/11/28/how-to-filter-querysets-dynamically.html (filter)
 https://simpleisbetterthancomplex.com/tutorial/2016/08/01/how-to-upload-files-with-django.html (filter)
+https://simpleisbetterthancomplex.com/tutorial/2018/11/28/advanced-form-rendering-with-django-crispy-forms.html crispy forms at bottom follow to design template custom field
+placement with crispy forms

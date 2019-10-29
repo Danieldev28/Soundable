@@ -29,13 +29,14 @@ urlpatterns = [
     url(r'^songs/$', artists, name='songs'),
     url(r'^artist/(?P<id>\d+)/$', artist),
     url(r'^blog.html/$', blog, name= 'blog'),
-    # url(r'^login.html/$', login, name= 'login'),
+    url(r'^login.html/$', login, name= 'login'),
     url(r'^register.html/$', register, name= 'register'),
     url(r'^songupload.html/$', songupload, name= 'songupload'),
     url(r'^accounts/logout/$', logout, name= 'logout'),
     url(r'^accounts/login/$', login, name= 'login'),
     url(r'^accounts/profile/$', user_profile, name= 'profile'),
     url(r'^shop.html/$',shop, name= 'shop'),
+    url(r'^edit_profile/$',edit_profile, name= 'edit_profile'),
     
     
 

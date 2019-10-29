@@ -19,6 +19,7 @@ admin.site.register(subscriber)
 
 
 
+
 class CustomUserAdmin(UserAdmin):
     add_form = CustomUserCreationForm
     form = CustomUserChangeForm
