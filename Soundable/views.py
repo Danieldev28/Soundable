@@ -10,7 +10,9 @@ from Soundable.models import *
 # Create your views here.
 
 def index(request):
-    return render(request,'index.html')
+    songs = song_table.objects.all().order_by('-id')[:3]
+    print(songs[0])
+    return render(request,'index.html', {'song1':songs[0], 'song2':songs[1], 'song3':songs[2]})
 
 def contact_us(request):
     """Contact submission form to database"""

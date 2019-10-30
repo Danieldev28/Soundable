@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 	{% block head %}
 	<link rel="stylesheet" type="text/css" href="{%static 'css/fix.css' %}">
 	<link rel="stylesheet" href="{% static 'css/style.css' %}"  type="text/css"/>
@@ -27,27 +28,6 @@
 											<h1> love your <span>music.</span></h1>
 										</div>
 									</div>
-									<!--<div class="tickets_form_container">-->
-									<!--	<form action="#" class="tickets_form">-->
-									<!--		<div class="d-flex flex-md-row flex-column align-items-start justify-content-md-between justify-content-start">-->
-									<!--			<div class="tickets_form_inputs d-flex flex-row align-items-start justify-content-between">-->
-									<!--				<div class="custom_dropdown tickets_form_input cdd">-->
-									<!--					<div class="custom_dropdown_selected cdd">Type</div>-->
-									<!--					<ul class="cdd">-->
-									<!--						<li>Songs</li>-->
-									<!--						<li>Beats</li>-->
-									<!--						<li>Instrumental</li>-->
-									<!--					</ul>-->
-									<!--				</div>-->
-									<!--				<button class="tickets_form_button button"><span>Search</span></button>-->
-													<!--<input type="text" class="tickets_form_input" placeholder="What type of track are you looking for?" required="required">-->
-									<!--				<div>-->
-
-									<!--				</div>-->
-									<!--			</div>-->
-									<!--		</div>-->
-									<!--	</form>-->
-									<!--</div>-->
 								</div>
 							</div>
 						</div>
@@ -97,120 +77,131 @@
 </div>
 
 
-<!-- Song -->
+ <!--single song preview container ---------->
 
-<!--<div class="song">-->
-<!--	<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{%static 'images/song.jpg' %}" data-speed="0.8"></div>-->
-<!--	<div class="container">-->
-<!--		<div class="row">-->
-<!--			<div class="col">-->
-<!--				<div class="song_content">-->
+<div class="song">
+	<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{%static 'images/song.jpg' %}" data-speed="0.8"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div class="song_content">
 
-<!-- Player -->
-<!--					<div class="single_player_container">-->
-<!--						<div class="single_player d-flex flex-row align-items-center justify-content-start">-->
-<!--							<div id="jplayer_1" class="jp-jplayer"></div>-->
-<!--							<div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">-->
-<!--								<div class="jp-gui jp-interface d-flex flex-lg-row flex-column align-items-start justify-content-start">-->
+ <!--Player -->
+					<div class="single_player_container">
+						<div class="single_player d-flex flex-row align-items-center justify-content-start">
+							<div id="jplayer_1" class="jp-jplayer"></div>
+							<div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
+								<div class="jp-gui jp-interface d-flex flex-lg-row flex-column align-items-start justify-content-start">
 
-<!-- Player Controls -->
-<!--									<div class="player_controls_box d-flex flex-row align-items-start justify-content-start">-->
-<!--										<div class="order-lg-1 order-2">-->
-<!--											<div class="player_title">song of the week</div>-->
-<!--											<div class="jp-controls-holder player_controls ml-auto d-flex flex-row align-items-start justify-content-start">-->
-<!--												<button class="jp-play player_button" tabindex="0"></button>-->
-<!--												<button class="jp-stop player_button" tabindex="0"></button>-->
-<!--											</div>-->
-<!--										</div>-->
-<!--										<div class="song_image ml-lg-auto order-lg-2 order-1"><img src="{%static 'images/song_1.jpg' %}" alt=""></div>-->
-<!--									</div>-->
+ <!--Player Controls -->
+									<div class="player_controls_box d-flex flex-row align-items-start justify-content-start">
+										<div class="order-lg-1 order-2">
+											<div class="player_title">song of the week</div>
+											<div class="jp-controls-holder player_controls ml-auto d-flex flex-row align-items-start justify-content-start">
+												<button class="jp-play player_button" tabindex="0"></button>
+												<button class="jp-stop player_button" tabindex="0"></button>
+											</div>
+										</div>
+										<div class="song_image ml-lg-auto order-lg-2 order-1"><img src="{%static 'images/song_1.jpg' %}" alt=""></div>
+									</div>
 
-<!-- Progress Bar -->
-<!--									<div class="player_bars d-flex flex-row align-items-start justify-content-start">-->
-<!--										<div class="player_progress_box">-->
-<!--											<div class="jp-current-time" role="timer" aria-label="time">00:00</div>-->
-<!--											<div class="song_info">-->
-<!--												<div class="jp-artist" aria-label="title">Michael Smith</div>-->
-<!--												<div class="jp-title" aria-label="title"></div>-->
-<!--											</div>-->
-<!--											<div class="jp-progress">-->
-<!--												<div class="jp-seek-bar">-->
-<!--													<div>-->
-<!--														<div class="jp-play-bar"><span></span></div>-->
-<!--													</div>-->
-<!--												</div>-->
-<!--											</div>-->
-<!--											<div class="jp-duration ml-auto" role="timer" aria-label="duration">02:33</div>-->
-<!--										</div>-->
+ <!--Progress Bar -->
+									<div class="player_bars d-flex flex-row align-items-start justify-content-start">
+										<div class="player_progress_box">
+											<div class="jp-current-time" role="timer" aria-label="time">00:00</div>
+											<div class="song_info">
+												<div class="jp-artist" aria-label="title">Michael Smith</div>
+												<div class="jp-title" aria-label="title"></div>
+											</div>
+											<div class="jp-progress">
+												<div class="jp-seek-bar">
+													<div>
+														<div class="jp-play-bar"><span></span></div>
+													</div>
+												</div>
+											</div>
+											<div class="jp-duration ml-auto" role="timer" aria-label="duration">02:33</div>
+										</div>
 
-<!-- Volume Controls -->
-<!--										<div class="jp-volume-controls ml-lg-auto">-->
-<!--											<div class="mute_button">-->
-<!--												<button class="jp-mute" tabindex="0"></button>-->
-<!--											</div>-->
-<!--											<div class="d-flex flex-row align-items-center justify-content-start">-->
-<!--												<div class="jp-volume-bar">-->
-<!--													<div>-->
-<!--														<div class="jp-volume-bar-value"></div>-->
-<!--													</div>-->
-<!--												</div>-->
-<!--											</div>-->
-<!--										</div>-->
-<!--									</div>-->
+ <!--Volume Controls -->
+										<div class="jp-volume-controls ml-lg-auto">
+											<div class="mute_button">
+												<button class="jp-mute" tabindex="0"></button>
+											</div>
+											<div class="d-flex flex-row align-items-center justify-content-start">
+												<div class="jp-volume-bar">
+													<div>
+														<div class="jp-volume-bar-value"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
 
-<!--								</div>-->
-<!--								<div class="jp-no-solution">-->
-<!--									<span>Update Required</span> To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>-->
-<!--								</div>-->
-<!--							</div>-->
-<!--						</div>-->
-<!--					</div>-->
+								</div>
+								<div class="jp-no-solution">
+									<span>Update Required</span> To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>
+								</div>
+							</div>
+						</div>
+					</div>
 
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!---------------------------------------------------------?-->
+
+<!---------Injected songs showing 2 most recent entries ----------->
+<div style="background-image: url('{% static 'images/row-1-col-1 (3).jpg'%}'); height: 295px; background-size: cover; margin-bottom:7px; background-attachment: fixed;">
+	<h3 style="color:white">{{song1.name}}</h3>
+	<audio controls controlsList="nodownload" style="margin:147px 40%">
+  <source src="{{song1.downloadfile.url}}" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+</div>
+<div style="background-image: url('{% static 'images/row-2-col-1 (4).jpg'%}'); height: 203px; background-attachment: fixed; background-size: cover; margin-bottom:7px">
+		<h3 style="color:white">{{song2.name}}</h3>
+	<audio controls controlsList="nodownload" style="margin:95px 40%">
+  <source src="{{song2.downloadfile.url}}" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+</div>
+<div style="background-image: url('{% static 'images/row-3-col-1 (2).jpg'%}'); height: 203px; background-attachment: fixed; background-size: cover; margin-bottom:7px">
+	<h3 style="color:white">{{song3.name}}</h3>
+	<audio controls controlsList="nodownload" style="margin:95px 40%">
+  <source src="{{song3.downloadfile.url}}" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+</div>
+<!--<img id="image-1" src="{% static 'images/row-1-col-1 (3).jpg'%}" class="img-fluid image-1" alt="Responsive image">-->
+
+<!--<img id="image-2" src="{% static 'images/row-2-col-1 (4).jpg'%}" class="img-fluid image-2" alt="Responsive image">-->
+<!--	<div class="artists_container">-->
+<!--		<div class="container">-->
+<!--			<div class="row">-->
+<!--				<div class="col">-->
+					
 <!--				</div>-->
+
 <!--			</div>-->
 <!--		</div>-->
+
+
+
+
 <!--	</div>-->
 <!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
 
-<!-- Tours -->
-<img id="image-1" src="{% static 'images/row-1-col-1 (3).jpg'%}" class="img-fluid image-1" alt="Responsive image">
+<!--</div>-->
+<!--</div>-->
 
-<img id="image-2" src="{% static 'images/row-2-col-1 (4).jpg'%}" class="img-fluid image-2" alt="Responsive image">
-
-<img id="image-3" src="{% static 'images/row-3-col-1 (2).jpg'%}" class="img-fluid image-3" alt="Responsive image">
+<!--<img id="image-3" src="{% static 'images/row-3-col-1 (2).jpg'%}" class="img-fluid image-3" alt="Responsive image">-->
 <!-- App -->
-
-<!--<div class="app">-->
-<!--	<div class="container">-->
-<!--		<div class="row row-lg-eq-height">-->
-
-			<!-- App Image -->
-<!--			<div class="col-lg-6 order-lg-1 order-2 app_col">-->
-<!--				<div class="app_image">-->
-<!--					<img src="{%static 'images/app.jpg' %}" alt="">-->
-<!--				</div>-->
-<!--			</div>-->
-
-			<!-- App Content -->
-<!--			<div class="col-lg-6 order-lg-2 order-1">-->
-<!--				<div class="app_content d-flex flex-column align-items-start justify-content-center">-->
-<!--					<div class="section_title">-->
-<!--						<h1>Get Your Music Right Now!</h1>-->
-<!--					</div>-->
-<!--					<div class="app_text">-->
-<!--						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum, neque ac porttitor scelerisque, nisi nisl tincidunt enim, non aliquet diam neque sed urna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante-->
-<!--							ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse nec faucibus velit. Quisque eleifend orci ipsum, a bibendum lacus suscipit sit amet</p>-->
-<!--					</div>-->
-<!--					<div class="stores d-flex flex-row align-items-start justify-content-start flex-wrap">-->
-<!--						<div class="store"><a href="#"><img src="{%static 'images/appstore.png' %}" alt=""></a></div>-->
-<!--						<div class="store"><a href="#"><img src="{%static 'images/googleplay.png' %}" alt=""></a></div>-->
-<!--					</div>-->
-<!--				</div>-->
-<!--			</div>-->
-
-<!--		</div>-->
-<!--	</div>-->
-<!--</div>-->
 
 <!-- Featured -->
 
@@ -218,10 +209,10 @@
 	<div class="container">
 		<div class="row">
 			<div class="col">
-				<div class="section_title text-center tours">
+				<div class="section_title text-center tours ">
 					<h1>Find Your Voice. Pick Your Genre...</h1>
 				</div>
-				<!--****** for card veiws of each genre****-->
+				<!--****** for card views of each genre****-->
 				<!--<div class="featured_list">-->
 				<!--	<div id="jplayer_2" class="jp-jplayer"></div>-->
 				<!--<div id="jp_container_2" class="jp-audio" role="application" aria-label="media player">-->
@@ -238,6 +229,7 @@
 				<!--</div>-->
 				
 				<!--------------------------The genre card group----------------------------------------->
+				
 			<div class="card-group">
   <div class="card">
     <img src="{% static 'images/ian-dooley-k8OCHhEymME-unsplash.jpg' %}" class="card-img-top" alt="...">
@@ -245,7 +237,7 @@
       <!--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
     </div>
       <button type="button" class="btn btn-secondary"><a href="{% url 'songs' %}"> Pop</button></a>
-    <div class="card-footer ">
+    <div class="card-footer">
     </div>
   </div>
   <div class="card">
@@ -296,7 +288,7 @@
 </div>
 <div class="card-group">
 	 <div class="card">
-    <img src="{%static 'images/tim-mossholder-eivYBKv3MAs-unsplash.jpg' %}" class="card-img-top" alt="...">
+    <img src="{%static 'images/elijah-m-henderson-xgT3iQDIijU-unsplash.jpg' %}" class="card-img-top" alt="...">
     <div class="card-body">
     </div>
 	 <button type="button" class="btn btn-secondary"><a href="{% url 'songs' %}">Americana</button></a>
@@ -325,7 +317,6 @@
  
 </div>
 </div>
-
 			</div>
 		</div>
 	</div>
@@ -388,91 +379,55 @@
 			</div>
 		</div>
 	</div>
-
-
-	 <!--Newsletter -->
-
-	<!--<div class="newsletter">-->
-	<!--	<div class="container">-->
-	<!--		<div class="row">-->
-
-	<!--			 Newsletter Content -->
-	<!--			<div class="col-xl-6">-->
-	<!--				<div class="newsletter_content">-->
-	<!--					<div class="section_title">-->
-	<!--						<h1>Subscribe & Follow</h1>-->
-	<!--					</div>-->
-	<!--					<div class="newsletter_text">-->
-	<!--						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum, neque ac porttitor scelerisque.</p>-->
-	<!--					</div>-->
-	<!--				</div>-->
-	<!--				<hr>-->
-	<!--			</div>-->
-			
-	<!--			 Newsletter Form -->
-	<!--			<div class="col-xl-6 nl_col">-->
-	<!--				<div class="newsletter_form_container d-flex flex-column align-items-start justify-content-end">-->
-	<!--					<form action="#" class="newsletter_form" id="newsletter_form">-->
-	<!--						<div class="d-flex flex-row align-items-start justify-content-between">-->
-	<!--							<input type="email" class="newsletter_input" placeholder="Your E-mail" required="required">-->
-	<!--							<button class="button newsletter_button"><span>subscribe</span></button>-->
-	<!--						</div>-->
-	<!--					</form>-->
-	<!--				</div>-->
-	<!--			</div>-->
-
-	<!--		</div>-->
-	<!--	</div>-->
-	<!--</div>-->
-	
-	<!--<div class="section_title">-->
-	<!--	<h3 class="contact_heading">Need to get in touch with Soundable?</h3>-->
-	<!--</div>-->
-	<!--	<div class="contact">-->
-	<!--	<div class="container">-->
-	<!--		<div class="row">-->
+	<!--section for contact me-->
+	<div class="section_title">
+		<h3 class="contact_heading">Need to get in touch with Soundable?</h3>
+	</div>
+		<div class="contact">
+		<div class="container">
+			<div class="row">
 				
-	<!--			 Contact Content -->
-	<!--			<div class="col-lg-5">-->
-	<!--				<div class="contact_content">-->
-	<!--					<div class="contact_title">Get in touch</div>-->
-	<!--					<div class="contact_text">-->
-	<!--						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum, neque ac porttitor scelerisque, nisi nisl tincidunt enim, non aliquet diam neque sed urna nequ.</p>-->
-	<!--					</div>-->
-	<!--					<div class="contact_list">-->
-	<!--						<ul>-->
-	<!--							<li><span>Address:</span> Main Str, no 253, New York, NY</li>-->
-	<!--							<br>-->
-	<!--							<li><span>Phone:</span> +546 990221 123</li>-->
-	<!--							<br>-->
-	<!--							<li><span>E-mail</span> music@contact.com</li>-->
-	<!--						</ul>-->
-	<!--					</div>-->
-	<!--				</div>-->
-	<!--			</div>-->
+				 <!--Contact Content -->
+				<div class="col-lg-5">
+					<div class="contact_content">
+						<div class="contact_title">Get in touch</div>
+						<div class="contact_text">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum, neque ac porttitor scelerisque, nisi nisl tincidunt enim, non aliquet diam neque sed urna nequ.</p>
+						</div>
+						<div class="contact_list">
+							<ul>
+								<li><span>Address:</span> Main Str, no 253, New York, NY</li>
+								<br>
+								<li><span>Phone:</span> +546 990221 123</li>
+								<br>
+								<li><span>E-mail</span> music@contact.com</li>
+							</ul>
+						</div>
+					</div>
+				</div>
 
-	<!--			 Contact Form -->
-	<!--			<div class="col-lg-6 offset-lg-1 contact_col">-->
-	<!--				<div class="contact_form_container">-->
-	<!--					<form action="#" class="contact_form" id="contact_form">-->
-	<!--						<div>-->
-	<!--							<div class="row">-->
-	<!--								<div class="col-md-6 contact_input_col"><input type="text" class="contact_input" placeholder="Your Name" required="required"></div>-->
-	<!--								<div class="col-md-6"><input type="email" class="contact_input" placeholder="Your E-mail" required="required"></div>-->
-	<!--							</div>-->
-	<!--							<br>-->
-	<!--						</div>-->
-	<!--						<div><input type="text" class="contact_input" placeholder="Subject" required="required"></div>-->
-	<!--						<br>-->
-	<!--						<div><textarea class="contact_input contact_textarea" placeholder="Message" required="required"></textarea></div>-->
-	<!--						<button class="button contact_form_button"><span>send</span></button>-->
-	<!--					</form>-->
-	<!--				</div>-->
-	<!--			</div>-->
+				 <!--Contact Form -->
+				<div class="col-lg-6 offset-lg-1 contact_col">
+					<div class="contact_form_container">
+						<form action="#" class="contact_form" id="contact_form">
+							<div>
+								<div class="row">
+									<div class="col-md-6 contact_input_col"><input type="text" class="contact_input" placeholder="Your Name" required="required"></div>
+									<div class="col-md-6"><input type="email" class="contact_input" placeholder="Your E-mail" required="required"></div>
+								</div>
+								<br>
+							</div>
+							<div><input type="text" class="contact_input" placeholder="Subject" required="required"></div>
+							<br>
+							<div><textarea class="contact_input contact_textarea" placeholder="Message" required="required"></textarea></div>
+							<button class="button contact_form_button"><span>send</span></button>
+						</form>
+					</div>
+				</div>
 
-	<!--		</div>-->
-	<!--	</div>-->
-	<!--</div>-->
+			</div>
+		</div>
+	</div>
 	
 
 	{% endblock %}

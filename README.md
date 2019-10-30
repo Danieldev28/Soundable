@@ -115,3 +115,8 @@ https://simpleisbetterthancomplex.com/tutorial/2016/11/28/how-to-filter-queryset
 https://simpleisbetterthancomplex.com/tutorial/2016/08/01/how-to-upload-files-with-django.html (filter)
 https://simpleisbetterthancomplex.com/tutorial/2018/11/28/advanced-form-rendering-with-django-crispy-forms.html crispy forms at bottom follow to design template custom field
 placement with crispy forms
+<!--order objects by date-->
+https://stackoverflow.com/questions/12759594/getting-recently-added-object-django
+https://stackoverflow.com/jobs/149252/full-stack-developer-top-hat
+<!--image didnt make the cut-->
+<!--images/tim-mossholder-eivYBKv3MAs-unsplash.jpg-->
