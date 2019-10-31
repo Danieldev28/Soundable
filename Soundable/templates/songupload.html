@@ -35,13 +35,12 @@
 <h1>Licensing</h1>
 </center>
 
-<div class="form-container submit-your-song">
  
     <div class "row">
-      	<div class="col-xl-6 center">
-<form method = "POST" enctype="multipart/form-data">
+      	<div class="col-xl-12 center-align page-margin">
+<form id="form_login" method = "POST" enctype="multipart/form-data">
   {% csrf_token  %}
-  <div class="form-row">
+  <div class="form-row center-align">
     <div class="form-group col-md-4">
       <label for="inputgenre">Genre</label>
       <select id="inputgenre" name="genretype" class="form-control">
@@ -53,7 +52,7 @@
     </div>
    
 
-    <div class="form-group col-md-4">
+    <div class="col-xl-4 ">
       <label for="inputsoundslike">Soundslike</label>
       <select id="inputsoundslike" name="soundslike" class="form-control">
         <option selected>Choose...</option>
@@ -67,7 +66,7 @@
    
 
 
-    <div class="form-group col-md-4">
+    <div class="col-xl-4 ">
       <label for="inputmood">Mood</label>
       <select id="inputMood" name="Mood" class="form-control">
         <option selected>Choose...</option>
@@ -140,7 +139,6 @@
 </form>
   </div>
   </div>
-</div>
 
 	
 

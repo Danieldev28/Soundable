@@ -17,9 +17,6 @@
 	
 	<!-- Header -->
 
-
-	<!-- Home -->
-
 	<div class="home">
 		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{%static 'images/artists.jpg' %}" data-speed="0.8"></div>
 		<div class="home_container">
@@ -55,22 +52,18 @@
 						<button type="button" class="btn btn-secondary">{{song.name}}</button>
 						<button type="button" class="btn btn-secondary">{{song.time}} Minutes</button>
 						<button type="button" class="btn btn-secondary">{{song.tempo.name}}</button>
-						<!--<button type="button" class="btn btn-secondary">{{song.name}}</button>-->
 						<div class="options align-it">
-
-							<button type="button" class="btn btn-secondary">play</button>
 						 <button type="button" id="buy-button" class="btn btn-secondary"><a href="{% url 'shop' %}">Buy</button></a>
-							<button type="button" class="btn btn-secondary">save</button>
 
 							<div class="dropdown col-12">
 								<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
    licensing options:
   </button>
 								<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-									<a class="dropdown-item" href="#">Standard Licence</a>
-									<a class="dropdown-item" href="#">Expanded Licence</a>
-									<a class="dropdown-item" href="#">Exclusive Licence</a>
-									<a class="dropdown-item" href="#">Master Licence</a>
+									<a class="dropdown-item" href="{% url 'shop' %}">Standard Licence</a>
+									<a class="dropdown-item" href="{% url 'shop' %}">Expanded Licence</a>
+									<a class="dropdown-item" href="{% url 'shop' %}">Exclusive Licence</a>
+									<a class="dropdown-item" href="{% url 'shop' %}">Master Licence</a>
 								</div>
 							</div>
 						</div>
@@ -85,24 +78,6 @@ Your browser does not support the audio element.
 					</div>
 						</div>
 						</div>
-
-
-				<!-- Songs -->
-				
-
-						<!-- Song -->
-						
-									
-						
-
-						 <!--Song -->
-						
-	
-
-
-	<!-- Newsletter -->
-
-
 {% endblock %}
 	<!-- Footer -->
 

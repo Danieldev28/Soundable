@@ -11,13 +11,23 @@
     padding-right:10%;
 }
 
-/*.submit-your-song{*/
-
-
-.profile-heading {
+.submit-your-song{
     text-align:center;
 }
 
+.form-container{
+    text-align:center;
+}
+
+.center{
+    text-align: center;
+}
+.profile-heading {
+    text-align:center;
+}
+.center-align{
+    text-align:center;
+}
 .border-box {
     border-style:solid;
 }
@@ -58,37 +68,43 @@ a:hover
     text-align:center;
 }
 
-#div_id_genre__name{
-text-align:left;
+.control-label{
+  text-align:center;
+}
+.control-group{
+    text-align: center;
+}
+#id_genre__name{
+text-align: center;
   
 }
 
-#div_id_soundslike__name {
-    text-align:right;
+#id_soundslike__name {
+   
 }
 
 
-#div_id_mood__name{
-  text-align:left;
+#id_mood__name{
+  
 }
 
-#div_id_Type__name{
+#id_Type__name{
 
-      text-align:right;
-}
-
-
-#div_id_gender__name{
-    text-align:left;
-}
-
-#div_id_tempo__name{
-    text-align:right;
+     
 }
 
 
-#div_id_genre__name.textinput.textInput{
-    text-align:left;
+#id_gender__name{
+
+}
+
+#id_tempo__name{
+  
+}
+
+
+#id_genre__name{
+   
 }
 
 .text-center {
@@ -109,4 +125,9 @@ text-align:right;
 .card-img-top{
     max-height: 240px;
    
+}
+
+.page-margin{
+    padding-left: 150px;
+    padding-right: 150px;
 }

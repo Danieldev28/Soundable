@@ -43,20 +43,24 @@
 </div>
 
 <!-- Artists -->
+
+
 	<div class="artists_container">
 		<div class="container">
 			<div class="row">
 				<div class="col">
-					
-
 
 <form method="get">
-	<h2>search</h2>
+	<center>
+	<h2>Search</h2>
+	</center>
     {{ filter.form|crispy }}
-    <div class="form-group col-md-6 mb-0">
+    <div class="form-group col-md-12 mb-0">
         {{ filter.form.genre__name|as_crispy_field }}
       </div>
-    <button type="submit">Search</button>
+      <br>
+    <!--<button type="submit">Search</button>--remove after your test it!!!!!!!!***************-->
+    <button type="submit" class="btn btn-primary col-12">Search</button>
   </form>
 					<br>
 					<form action="">
@@ -77,28 +81,21 @@
 						<br>
 						<div class="artist_name">
 							<h3><a href="/artist/{{song.id}}">{{song.creator.first_name}}</a></h3>
-							{{song.downloadfile.url}}
 						</div>
 						<button type="button" class="btn btn-secondary">{{song.name}}</button>
 						<button type="button" class="btn btn-secondary">{{song.time}} Minutes</button>
 						<button type="button" class="btn btn-secondary">{{song.tempo.name}}</button>
-						<button type="button" class="btn btn-secondary">{{song.name}}</button>
 						<div class="options align-it">
-										
-							<button type="button" class="btn btn-secondary">play</button>
 						 <button type="button" id="buy-button" class="btn btn-secondary"><a href="{% url 'shop' %}">Buy</button></a>
-							<button type="button" class="btn btn-secondary">save</button>
-							
-
 							<div class="dropdown col-12">
 								<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
    licensing options:
   </button>
 								<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-							<a class="dropdown-item" href="#">Standard Licence</a>
-									<a class="dropdown-item" href="#">Expanded Licence</a>
-									<a class="dropdown-item" href="#">Exclusive Licence</a>
-									<a class="dropdown-item" href="#">Master Licence</a>
+							<a class="dropdown-item" href="{% url 'shop' %}">Standard Licence</a>
+									<a class="dropdown-item" href="{% url 'shop' %}">Expanded Licence</a>
+									<a class="dropdown-item" href="{% url 'shop' %}">Exclusive Licence</a>
+									<a class="dropdown-item" href="{% url 'shop' %}">Master Licence</a>
 								</div>
 							</div>
 						</div>
@@ -116,10 +113,6 @@ Your browser does not support the audio element.
 
 			</div>
 		</div>
-
-
-
-
 	</div>
 <!--</div>-->
 </div>
@@ -134,7 +127,9 @@ Your browser does not support the audio element.
 <!-- Featured Artist -->
 
 <div class="featured_artist">
-	<div class="background_image" style="{%static 'background-image:url(images/featured_artist_1.jpg)' %}"></div>
+	<div class="background_image" ></div>
+	<div class="background_image song_image ml-lg-auto order-lg-2 order-1"><img src="{%static 'images/featured_artist_1.jpg' %}"alt=""></div>
+
 	<div class="container">
 		<div class="row row-lg-eq-height">
 
@@ -146,9 +141,7 @@ Your browser does not support the audio element.
 						<h1>Jennifer Smith</h1>
 					</div>
 					<div class="featured_artist_text">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum, neque ac porttitor scelerisque, nisi nisl tincidunt enim, non aliquet diam neque sed urna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum, neque
-							ac porttitor scelerisque, nisi nisl tincidunt enim, non aliquet diam neque sed urna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum, neque ac porttitor scelerisque, nisi nisl tincidunt enim, non aliquet diam neque sed
-							urna.</p>
+						<p>An intrinsic creator produces live show. Band music waits beneath a competitive verse. Whatever fudge meets band music in the revolting psychologist.</p>
 					</div>
 					<div class="button featured_artist_button"><a href="songs">read more</a></div>
 				</div>
@@ -171,7 +164,7 @@ Your browser does not support the audio element.
 						<h1>Subscribe & Follow</h1>
 					</div>
 					<div class="newsletter_text">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum, neque ac porttitor scelerisque.</p>
+						<p>Band music compromises album release. Album release slices a camp throughout a pet maker. A horse consents without the critic. Band music shoots a wizard underneath the gown. </p>
 					</div>
 				</div>
 			</div>
