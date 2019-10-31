@@ -1,6 +1,6 @@
 from Soundable.models import *
 import django_filters
-
+# Filter results of search menu.
 class UserFilter(django_filters.FilterSet):
     class Meta:
         model = song_table

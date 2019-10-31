@@ -30,6 +30,7 @@
 		</div>
 	</div>
 <center>
+  <!--Registration form with fields that must be filled in order to validate user-->
 	<h3>Register Here</h3>
 	<p>If you already have an account, you can <a href="{% url 'login' %}">sign in</a></p>
 <form method="POST">
@@ -62,7 +63,8 @@
 
 
 </form>
-
+<!----This script is for password verificattion double entry to ensure that the two passwords created match each other,
+if true displays match on screen to the user--->
 <script type="text/javascript">
   var check = function() {
   if (document.getElementById('password').value ==

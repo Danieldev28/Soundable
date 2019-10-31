@@ -8,7 +8,7 @@ class CustomUser(AbstractUser):
     age = models.IntegerField(null = True)
     phone = models.CharField(max_length = 20, null = True)
     is_active = models.BooleanField(default=True)
-
+# Datatbase models-----------------------------
 class mood(models.Model):
     name = models.CharField(max_length=30)
     description = models.CharField(max_length=50)

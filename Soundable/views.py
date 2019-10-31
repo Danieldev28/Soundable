@@ -40,13 +40,13 @@ def artists(request):
     Type_list = Type.objects.all()
     gender_list = gender.objects.all()
     tempo_list = tempo.objects.all()
-    songs = song_table.objects.all()
+    songs = song_table.objects.all().order_by('-id')[:10]
     print()
     if request.method == 'get':
-        user_list = song_table.objects.all()
+        user_list = song_table.objects.all().order_by('-id')[:10]
         user_filter = UserFilter(request.GET, queryset=user_list)
     else:
-        user_list = song_table.objects.all()
+        user_list = song_table.objects.all().order_by('-id')[:10]
         user_filter = UserFilter(request.GET, queryset=user_list)
     if request.method == "POST":
             # if form.is_valid():

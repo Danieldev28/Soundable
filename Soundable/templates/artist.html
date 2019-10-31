@@ -40,14 +40,13 @@
   </div>
 
 
-	<!-- Songs -->
+	<!-- Displays information relating to a single song (most recent added) -->
 	<div class="container">
 						<div class="row">
 							<div class="col-12 border-box">
 						<br>
 						<div class="artist_name">
 							<h3><a href="{% url 'songs' %}">{{song.creator.first_name}}</a></h3>
-							<!--{{song.downloadfile.url}}-->
 						</div>
 						<button type="button" class="btn btn-secondary">{{song.name}}</button>
 						<button type="button" class="btn btn-secondary">{{song.time}} Minutes</button>
@@ -55,6 +54,7 @@
 						<div class="options align-it">
 						 <button type="button" id="buy-button" class="btn btn-secondary"><a href="{% url 'shop' %}">Buy</button></a>
 
+							<!-----Dropdown licensing options to purchase music from user------>
 							<div class="dropdown col-12">
 								<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
    licensing options:
@@ -67,6 +67,7 @@
 								</div>
 							</div>
 						</div>
+						<!----Audio controls for music playback--->
 												<audio controls controlsList="nodownload">
   <source src="{{song.downloadfile.url}}" type="audio/mpeg">
 Your browser does not support the audio element.

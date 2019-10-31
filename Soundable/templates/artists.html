@@ -30,10 +30,10 @@
 </div>
 
 <!-- Search -->
-
+<!-----Contains bg-image two for search bar section----->
 <div class="search">
-		
 	<div class="background_image "><img src="{%static 'images/art-background-image-blur-251603.jpg' %}"alt=""></div>
+	
 	<div class="container">
 		<div class="row">
 			<div class="col">
@@ -44,15 +44,14 @@
 	</div>
 </div>
 
-<!-- Artists -->
 
+<!-- Artists -->
+<!--Specific search by keywords and search by searchbar functions------>
 		
 	<div class="artists_container">
-	
-
 		<div class="container">
 			<div class="row">
-				<div class="background_image "><img src="{%static 'images/abstract-art-artistic-3094799.jpg' %}"alt=""></div>
+				<div class="background_image"><img src="{%static 'images/abstract-art-artistic-3094799.jpg' %}"alt=""></div>
 				<div class="col">
 
 <form method="get">
@@ -64,7 +63,6 @@
         {{ filter.form.genre__name|as_crispy_field }}
       </div>
       <br>
-    <!--<button type="submit">Search</button>--remove after your test it!!!!!!!!***************-->
     <button type="submit" class="btn btn-primary col-12">Search</button>
   </form>
 					<br>
@@ -78,7 +76,7 @@
 							</div>
 						</div>
 					</form>
-
+					<!--Filter for new songs added to list shows all songs added by users with a registered account-->
 					<div class="container">
 						<div class="row">
 							{% for song in filter.qs %}
@@ -94,8 +92,8 @@
 						 <button type="button" id="buy-button" class="btn btn-secondary"><a href="{% url 'shop' %}">Buy</button></a>
 							<div class="dropdown col-12">
 								<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-   licensing options:
-  </button>
+   						licensing options: </button>
+   								<!---Drop down menu for licensing option to buy songs-->
 								<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 							<a class="dropdown-item" href="{% url 'shop' %}">Standard Licence</a>
 									<a class="dropdown-item" href="{% url 'shop' %}">Expanded Licence</a>
@@ -129,7 +127,7 @@ Your browser does not support the audio element.
 
 
 
-<!-- Featured Artist -->
+<!-- Featured Artist Section Advertisment -->
 
 <div class="featured_artist">
 	<div class="background_image" ></div>
@@ -189,88 +187,4 @@ Your browser does not support the audio element.
 		</div>
 	</div>
 </div>
-
-
 {% endblock %}
-<!-- Footer -->
-<!--<form>-->
-<!--  <div class="form-row">-->
-<!--    <div class="form-group col-md-4">-->
-<!--      <label for="inputgenre">Genre</label>-->
-<!--      <select id="inputgenre" name="genre" class="form-control">-->
-<!--        <option selected>Choose...</option>-->
-<!--        {%  for genre in genre %}-->
-<!--                      <option value="{{genre.id}}">  {{genre.name}}</option>-->
-<!--        {% endfor %}-->
-        
-<!--      </select>-->
-<!--    </div>-->
-   
-
-<!--    <div class="form-group col-md-4">-->
-<!--      <label for="inputsoundslike">Soundslike</label>-->
-<!--      <select id="inputsoundslike" name="soundslike" class="form-control">-->
-<!--        <option selected>Choose...</option>-->
-<!--    {% for soundslike in soundslike %}-->
-<!--            <option value="{{soundslike.id}}"> {{soundslike.name}}</option>-->
-           
-<!--        {% endfor %}-->
-<!--      </select>-->
-<!--    </div>-->
-    
-
-<!--    <div class="form-group col-md-4">-->
-<!--      <label for="inputmood">Mood</label>-->
-<!--      <select id="inputMood" name="Mood" class="form-control">-->
-<!--      	  <option selected>Choose...</option>-->
-<!--            {% for mood in mood %}-->
-<!--            <option value="{{mood.id}}"> {{mood.name}}</option>-->
-           
-<!--        {% endfor %}-->
-<!--      </select>-->
-<!--    </div>-->
-  
-  
-<!-- <div class="form-group col-md-4">-->
-<!--      <label for="input-type">Type</label>-->
-<!--      <select id="input-type" name="type" class="form-control">-->
-<!--      	<option selected>Choose...</option>-->
-<!--         {% for Type in Type %}-->
-<!--            <option value="{{Type.id}}"> {{Type.name}}</option>-->
-           
-<!--        {% endfor %}-->
-      
-<!--      </select>-->
-<!--    </div>-->
-    
-        
-<!--     <div class="form-group col-md-4">-->
-<!--      <label for="input-gender">Gender</label>-->
-<!--      <select id="input-gender" name="gender" class="form-control">-->
-<!--        <option selected>Choose...</option>-->
-<!--             {% for gender in gender %}-->
-<!--            <option value="{{gender.id}}"> {{gender.name}}</option>-->
-           
-<!--        {% endfor %}-->
-      
-<!--      </select>-->
-<!--    </div>-->
-    
-<!--    <div class="form-group col-md-4">-->
-<!--      <label for="input-tempo">Tempo</label>-->
-<!--      <select id="input-tempo" name="tempo" class="form-control">-->
-<!--        <option selected>Choose...</option>-->
-<!--           {% for tempo in tempo %}-->
-<!--            <option value="{{tempo.id}}"> {{tempo.name}}</option>-->
-           
-<!--        {% endfor %}-->
-<!--      </select>-->
-<!--    </div>-->
- 
-<!--  </div>-->
-<!--  <br>-->
-<!--  <button type="button" class="btn btn-primary">Find Songs!</button>-->
-<!--  <button type="button" class="btn btn-secondary">Reset</button>-->
-<!--  <br>-->
-  
-<!--</form>-->

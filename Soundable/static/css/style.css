@@ -32,6 +32,7 @@
     border-style:solid;
 }
 
+/*Styling applied to images home page*/
 #image-1{
     margin-bottom: 10px;
    
@@ -45,21 +46,7 @@
     margin-bottom: 10px;
 }
 	
-a {
-    color: white;
-    text-decoration: none;
-    transition: 0.4s;
-}
-
-a:hover 
-{
-     color:red; 
-     text-decoration:none; 
-    
-     cursor:pointer; 
-     
-}
-
+/*Align menus to the centre of the page*/
 .align-it-center{
     text-align:center;
 }
@@ -79,38 +66,11 @@ text-align: center;
   
 }
 
-#id_soundslike__name {
-   
-}
-
-
-#id_mood__name{
-  
-}
-
-#id_Type__name{
-
-     
-}
-
-
-#id_gender__name{
-
-}
-
-#id_tempo__name{
-  
-}
-
-
-#id_genre__name{
-   
-}
-
 .text-center {
 text-align:right;
 }
 
+/*Card section home page styling*/
 .card-body{
  padding: 0;
  flex:none;
@@ -130,4 +90,18 @@ text-align:right;
 .page-margin{
     padding-left: 150px;
     padding-right: 150px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+a:hover 
+{
+     color:red; 
+     text-decoration:none; 
+    
+     cursor:pointer; 
 }
