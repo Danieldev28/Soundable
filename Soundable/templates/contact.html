@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-{% extends 'base.html' %}
-{% load static %}
-{% block head%}
+<!DOCTYPE html> {% extends 'base.html' %} {% load static %} {% block head%}
 <title>Contact</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,105 +7,104 @@
 <link rel="stylesheet" type="text/css" href="{%static 'styles/bootstrap-4.1.2/bootstrap.min.css' %}">
 <link href="{%static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %} " rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="{%static 'styles/contact.css' %}">
-<link rel="stylesheet" type="text/css" href="{%static 'styles/contact_responsive.css' %}">
-{%endblock%}
-{% block content %}
+<link rel="stylesheet" type="text/css" href="{%static 'styles/contact_responsive.css' %}"> {%endblock%} {% block content %}
 
-	<!-- Home -->
-	<div class="home">
-		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{%static 'images/artists.jpg'%}" data-speed="0.8"></div>
-		<div class="home_container">
-			<div class="container">
-				<div class="row">
-					<div class="col">
-						<div class="home_content text-center">
-							<div class="home_title">Contact</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- Contact -->
-
-	<div class="contact">
+<!-- Home -->
+<div class="home">
+	<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{%static 'images/artists.jpg'%}" data-speed="0.8"></div>
+	<div class="home_container">
 		<div class="container">
 			<div class="row">
-				
-				<!-- Contact Content -->
-				<div class="col-lg-5">
-					<div class="contact_content">
-						<div class="contact_title">Get in touch</div>
-						<div class="contact_text">
-							<p>Follow us prices email contact before the unlikely haircut. Email contact leaves follow us under the troop. The church distorts follow us beside a cold. Should email contact move the extraneous formula?</p>
-						</div>
-						<div class="contact_list">
-							<ul>
-								<li><span>Address:</span> 2 Bloor Str, West, Toronto, ON</li>
-								<li><span>Phone:</span> +546 990221 123</li>
-								<li><span>E-mail</span> music@contact.com</li>
-							</ul>
-						</div>
+				<div class="col">
+					<div class="home_content text-center">
+						<div class="home_title">Contact</div>
 					</div>
 				</div>
-
-				<!-- Contact Form -->
-				<div class="col-lg-6 offset-lg-1 contact_col">
-					<div class="contact_form_container">
-						<form class="contact_form" method="POST" id="contact_form">
-							{% csrf_token %}
-							<div>
-								<div class="row">
-									<div class="col-md-6 contact_input_col"><input name="name" type="text" class="contact_input" placeholder="Your Name" required="required"></div>
-									<div class="col-md-6"><input name="email" type="email" class="contact_input" placeholder="Your E-mail" required="required"></div>
-								</div>
-							</div>
-							<div><input type="text" class="contact_input" name="subject" placeholder="Subject" required="required"></div>
-							<div><textarea class="contact_input contact_textarea" name="message" placeholder="Message" required="required"></textarea></div>
-							<input type="hidden" name="form" value="contact"/>
-							<button class="button contact_form_button"><span>send</span></button>
-						</form>
-					</div>
-				</div>
-
 			</div>
 		</div>
 	</div>
+</div>
 
-	<!--Sign up for updates Newsletter -->
+<!-- Contact -->
 
-	<div class="newsletter">
-		<div class="container">
-			<div class="row">
+<div class="contact">
+	<div class="container">
+		<div class="row">
 
-				<!-- Newsletter Content -->
-				<div class="col-xl-6">
-					<div class="newsletter_content">
-						<div class="section_title"><h1>Subscribe & Follow</h1></div>
-						<div class="newsletter_text">
-							<p> Get in touch pops. Email contact activates get in touch. Email contact clicks behind get in touch `. Get in touch ` lurks into the implicit password.</p>
-						</div>
+			<!-- Contact Content -->
+			<div class="col-lg-5">
+				<div class="contact_content">
+					<div class="contact_title">Get in touch</div>
+					<div class="contact_text">
+						<p>Follow us prices email contact before the unlikely haircut. Email contact leaves follow us under the troop. The church distorts follow us beside a cold. Should email contact move the extraneous formula?</p>
+					</div>
+					<div class="contact_list">
+						<ul>
+							<li><span>Address:</span> 2 Bloor Str, West, Toronto, ON</li>
+							<li><span>Phone:</span> +546 990221 123</li>
+							<li><span>E-mail</span> music@contact.com</li>
+						</ul>
 					</div>
 				</div>
-
-				<!-- Newsletter Form -->
-				<div class="col-xl-6 nl_col">
-					<div class="newsletter_form_container d-flex flex-column align-items-start justify-content-end">
-						<form method="POST" class="newsletter_form" id="newsletter_form">
-							{% csrf_token %}
-							<div class="d-flex flex-row align-items-start justify-content-between">
-								<input name="newsletter" type="email" class="newsletter_input" placeholder="Your E-mail" required="required">
-								<input type="hidden" name="form" value="subscribe"/>
-								<button class="button newsletter_button"><span>subscribe</span></button>
-							</div>
-						</form>
-					</div>
-				</div>
-
 			</div>
+
+			<!-- Contact Form -->
+			<div class="col-lg-6 offset-lg-1 contact_col">
+				<div class="contact_form_container">
+					<form class="contact_form" method="POST" id="contact_form">
+						{% csrf_token %}
+						<div>
+							<div class="row">
+								<div class="col-md-6 contact_input_col"><input name="name" type="text" class="contact_input" placeholder="Your Name" required="required"></div>
+								<div class="col-md-6"><input name="email" type="email" class="contact_input" placeholder="Your E-mail" required="required"></div>
+							</div>
+						</div>
+						<div><input type="text" class="contact_input" name="subject" placeholder="Subject" required="required"></div>
+						<div><textarea class="contact_input contact_textarea" name="message" placeholder="Message" required="required"></textarea></div>
+						<input type="hidden" name="form" value="contact" />
+						<button class="button contact_form_button"><span>send</span></button>
+					</form>
+				</div>
+			</div>
+
 		</div>
 	</div>
+</div>
+
+<!--Sign up for updates Newsletter -->
+
+<div class="newsletter">
+	<div class="container">
+		<div class="row">
+
+			<!-- Newsletter Content -->
+			<div class="col-xl-6">
+				<div class="newsletter_content">
+					<div class="section_title">
+						<h1>Subscribe & Follow</h1>
+					</div>
+					<div class="newsletter_text">
+						<p> Get in touch pops. Email contact activates get in touch. Email contact clicks behind get in touch `. Get in touch ` lurks into the implicit password.</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Newsletter Form -->
+			<div class="col-xl-6 nl_col">
+				<div class="newsletter_form_container d-flex flex-column align-items-start justify-content-end">
+					<form method="POST" class="newsletter_form" id="newsletter_form">
+						{% csrf_token %}
+						<div class="d-flex flex-row align-items-start justify-content-between">
+							<input name="newsletter" type="email" class="newsletter_input" placeholder="Your E-mail" required="required">
+							<input type="hidden" name="form" value="subscribe" />
+							<button class="button newsletter_button"><span>subscribe</span></button>
+						</div>
+					</form>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
 {% endblock %}
-	<!-- Footer -->
-
+<!-- Footer -->

@@ -1,0 +1,1 @@
+web: gunicorn soundable_app.wsgi:application

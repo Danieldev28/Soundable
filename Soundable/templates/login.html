@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-{% extends 'base.html' %}
-{% load static %}
-{% block head%}
+<!DOCTYPE html> {% extends 'base.html' %} {% load static %} {% block head%}
 <title>Contact</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,55 +7,41 @@
 <link rel="stylesheet" type="text/css" href="{%static 'styles/bootstrap-4.1.2/bootstrap.min.css' %}">
 <link href="{%static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %} " rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="{%static 'styles/contact.css' %}">
-<link rel="stylesheet" type="text/css" href="{%static 'styles/contact_responsive.css' %}">
-{%endblock%}
-{% block content %}
+<link rel="stylesheet" type="text/css" href="{%static 'styles/contact_responsive.css' %}"> {%endblock%} {% block content %}
 
 <!-- Home/header -->
 
-	<div class="home">
-		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{%static 'images/contact.jpg' %}" data-speed="0.8"></div>
-		<div class="home_container">
-			<div class="container">
-				<div class="row">
-					<div class="col">
-						<div class="home_content text-center">
-							<div class="home_title">Login</div>
-						</div>
+<div class="home">
+	<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{%static 'images/contact.jpg' %}" data-speed="0.8"></div>
+	<div class="home_container">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="home_content text-center">
+						<div class="home_title">Login</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!--Login page containing jijna template verify it is a user---->
+</div>
+
+<!--Login page containing jijna template verify it is a user---->
 <center>
 	<h3>Login Here</h3>
-	
-		{% if messages %}
-		<div>
-			{% for message in messages %}
-			{{ message }}
-			{%endfor%}
-		</div>
-		
-		{% endif %}
-	<form method = "POST">
-	  {% csrf_token %}
-			{{ login_form }}
-			<button type ="submit">Login</button>
-			<td>Not yet a memeber?<a href="{% url 'register' %}"> Register</a></td>
-		</form>
+
+	{% if messages %}
+	<div>
+		{% for message in messages %} {{ message }} {%endfor%}
+	</div>
+
+	{% endif %}
+	<form method="POST">
+		{% csrf_token %} {{ login_form }}
+		<button type="submit">Login</button>
+		<td>Not yet a memeber?<a href="{% url 'register' %}"> Register</a></td>
+	</form>
 
 </center>
-<!--------------------------------------------------------> 
-
-
-		
-	
-
-
-
 {%endblock%}
-
-
 <!--footer-->

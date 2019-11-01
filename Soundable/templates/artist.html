@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-{% extends 'base.html' %}
-{% load static %}
-{% block head%}
+<!DOCTYPE html> {% extends 'base.html' %} {% load static %} {% block head%}
 <title>Single Artist</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,74 +8,68 @@
 <link href="{%static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
 <link href="{%static 'plugins/video-js/video-js.css' %}" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="{%static 'styles/artist.css' %}">
-<link rel="stylesheet" type="text/css" href="{%static 'styles/artist_responsive.css' %}">
-{% endblock %}
-{% block content %}
-	
-	<!-- Header -->
+<link rel="stylesheet" type="text/css" href="{%static 'styles/artist_responsive.css' %}"> {% endblock %} {% block content %}
 
-	<div class="home">
-		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{%static 'images/artists.jpg' %}" data-speed="0.8"></div>
-		<div class="home_container">
-			<div class="container">
-				<div class="row">
-					<div class="col">
-						<div class="home_content text-center">
-							<div class="home_title">Artist</div>
-						</div>
+<!-- Header -->
+
+<div class="home">
+	<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{%static 'images/artists.jpg' %}" data-speed="0.8"></div>
+	<div class="home_container">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="home_content text-center">
+						<div class="home_title">Artist</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+</div>
 
-	<!-- Search -->
+<!-- Artist -->
+<h2 class="align-it-center"> {{song.name}}</h2>
+<div class="form-group col-6">
+</div>
 
-	<!-- Artist -->
-	<h2 class = "align-it-center"> {{song.name}}</h2>
-  <div class="form-group col-6">
-  </div>
+<!-- Displays information relating to a single song (most recent added) -->
+<div class="container">
+	<div class="row">
+		<div class="col-12 border-box">
+			<br>
+			<div class="artist_name">
+				<h3><a href="{% url 'songs' %}">{{song.creator.first_name}}</a></h3>
+			</div>
+			<button type="button" class="btn btn-secondary">{{song.name}}</button>
+			<button type="button" class="btn btn-secondary">{{song.time}} Minutes</button>
+			<button type="button" class="btn btn-secondary">{{song.tempo.name}}</button>
+			<div class="options align-it">
+				<button type="button" id="buy-button" class="btn btn-secondary"><a href="{% url 'shop' %}">Buy</button></a>
 
-
-	<!-- Displays information relating to a single song (most recent added) -->
-	<div class="container">
-						<div class="row">
-							<div class="col-12 border-box">
-						<br>
-						<div class="artist_name">
-							<h3><a href="{% url 'songs' %}">{{song.creator.first_name}}</a></h3>
-						</div>
-						<button type="button" class="btn btn-secondary">{{song.name}}</button>
-						<button type="button" class="btn btn-secondary">{{song.time}} Minutes</button>
-						<button type="button" class="btn btn-secondary">{{song.tempo.name}}</button>
-						<div class="options align-it">
-						 <button type="button" id="buy-button" class="btn btn-secondary"><a href="{% url 'shop' %}">Buy</button></a>
-
-							<!-----Dropdown licensing options to purchase music from user------>
-							<div class="dropdown col-12">
-								<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<!-----Dropdown licensing options to purchase music from user------>
+				<div class="dropdown col-12">
+					<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
    licensing options:
   </button>
-								<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-									<a class="dropdown-item" href="{% url 'shop' %}">Standard Licence</a>
-									<a class="dropdown-item" href="{% url 'shop' %}">Expanded Licence</a>
-									<a class="dropdown-item" href="{% url 'shop' %}">Exclusive Licence</a>
-									<a class="dropdown-item" href="{% url 'shop' %}">Master Licence</a>
-								</div>
-							</div>
-						</div>
-						<!----Audio controls for music playback--->
-												<audio controls controlsList="nodownload">
+					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+						<a class="dropdown-item" href="{% url 'shop' %}">Standard Licence</a>
+						<a class="dropdown-item" href="{% url 'shop' %}">Expanded Licence</a>
+						<a class="dropdown-item" href="{% url 'shop' %}">Exclusive Licence</a>
+						<a class="dropdown-item" href="{% url 'shop' %}">Master Licence</a>
+					</div>
+				</div>
+			</div>
+			<!----Audio controls for music playback--->
+			<audio controls controlsList="nodownload">
   <source src="{{song.downloadfile.url}}" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>
-<h3>Lyrics</h3>
-<p> {{song.lyrics}} </p>
-					</div>
-					<div>
-					</div>
-						</div>
-						</div>
+			<h3>Lyrics</h3>
+			<p> {{song.lyrics}} </p>
+		</div>
+		<div>
+		</div>
+	</div>
+</div>
 {% endblock %}
-	<!-- Footer -->
-
+<!-- Footer -->

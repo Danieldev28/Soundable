@@ -16,7 +16,7 @@
 	<link rel="stylesheet" type="text/css" href="{%static 'styles/main_styles.css' %}">
 	<link rel="stylesheet" type="text/css" href="{%static 'styles/responsive.css' %}">
 	<!-----------------------------------------Personal sylesheet------------------->
-	<link rel="stylesheet" href="{%static 'css/style.css'%}"  type="text/css"/>
+	<link rel="stylesheet" href="{%static 'css/style.css'%}" type="text/css" /> 
 	{% block head %}
 	
 	{% endblock %}
@@ -45,12 +45,12 @@
 							<!-- Main Navigation -->
 							<nav class="main_nav">
 								<ul class="d-flex flex-row align-items-center justify-content-start">
-										<li><a href="{% url 'index' %}">Home</a></li>
+									<li><a href="{% url 'index' %}">Home</a></li>
 									<li><a href="{% url 'songs' %}">Music</a></li>
 									<li><a href="{% url 'contact' %}">Contact</a></li>
-								
-									
-									
+
+
+
 								</ul>
 							</nav>
 
@@ -58,10 +58,10 @@
 							<div class="log_reg d-flex flex-row align-items-center justify-content-start">
 								<ul class="d-flex flex-row align-items-start justify-content-start">
 									{% if user.is_authenticated %}
-										<li><a href="{% url 'profile' %}">Profile</a></li>
-										<li><a href="{% url 'songupload' %}">Song Submission</a></li>
+									<li><a href="{% url 'profile' %}">Profile</a></li>
+									<li><a href="{% url 'songupload' %}">Song Submission</a></li>
 									<li><a href="{% url 'logout' %}">Logout</a></li>
-									
+
 									{% else %}
 									<li><a href="{% url 'login' %}">Login</a></li>
 									<li><a href="{% url 'register' %}">Register</a></li>
@@ -98,10 +98,9 @@
 				</div>
 			</div>
 		</div>
-		
-		{% block content %}
-		{% endblock %}
-		
+
+		{% block content %} {% endblock %}
+
 		<!---Base footer injected into every page-->
 		<footer class="footer">
 			<div class="background_image" style="background-image:url({%static 'images/footer.jpg'%})"></div>

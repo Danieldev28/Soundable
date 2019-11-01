@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-{% extends 'base.html' %}
-{% load static %}
-{% block head%}
+<!DOCTYPE html> {% extends 'base.html' %} {% load static %} {% block head%}
 <title>Contact</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,76 +7,75 @@
 <link rel="stylesheet" type="text/css" href="{%static 'styles/bootstrap-4.1.2/bootstrap.min.css' %}">
 <link href="{%static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %} " rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="{%static 'styles/contact.css' %}">
-<link rel="stylesheet" type="text/css" href="{%static 'styles/contact_responsive.css' %}">
-{%endblock%}
+<link rel="stylesheet" type="text/css" href="{%static 'styles/contact_responsive.css' %}"> 
+{%endblock%} 
 {% block content %}
 
 <!-- Home/header -->
-	<div class="home">
-		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{%static 'images/contact.jpg' %}" data-speed="0.8"></div>
-		<div class="home_container">
-			<div class="container">
-				<div class="row">
-					<div class="col">
-						<div class="home_content text-center">
-							<div class="home_title">Registration</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+<div class="home">
+  <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{%static 'images/contact.jpg' %}" data-speed="0.8"></div>
+  <div class="home_container">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="home_content text-center">
+            <div class="home_title">Registration</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <center>
   <!--Registration form with fields that must be filled in order to validate user-->
-	<h3>Register Here</h3>
-	<p>If you already have an account, you can <a href="{% url 'login' %}">sign in</a></p>
-<form method="POST">
-  {% csrf_token %}
-  First name:<br>
-  <input type="text" name="firstname"><br>
-  Last name:<br>
-  <input type="text" name="lastname"><br>
-    
-<lable>Age:</lable> <br />
-<input type="number" name="age"/><br />
-<label>Address:</label> <br />
-<input type="text" name="address"/> <br />
-  <label for="phone">Enter your phone number:</label>
-  <br>
-<input type="text" id="phone" name="phone" />
+  <h3>Register Here</h3>
+  <p>If you already have an account, you can <a href="{% url 'login' %}">sign in</a></p>
+  <form method="POST">
+    {% csrf_token %} First name:<br>
+    <input type="text" name="firstname"><br> Last name:<br>
+    <input type="text" name="lastname"><br>
 
-<br>
-<label>E-mail:</label><br>
-<input type="text" name="mail"><br>
-<label>Password:</label> <br />
-<input type="password" name="password" id="password" onkeyup='check();'/><br />
-<label>Confirm Password:</label> <br />
- <input type="password" name="confirm_password" id="confirm_password" onkeyup='check();'/> <br />
-  <span id='message'></span><br />
-<input type="submit" value="Send">
-<input type="reset" value="Reset">
-<br>
- 
+    <lable>Age:</lable> <br />
+    <input type="number" name="age" /><br />
+    <label>Address:</label> <br />
+    <input type="text" name="address" /> <br />
+    <label for="phone">Enter your phone number:</label>
+    <br>
+    <input type="text" id="phone" name="phone" />
+
+    <br>
+    <label>E-mail:</label><br>
+    <input type="text" name="mail"><br>
+    <label>Password:</label> <br />
+    <input type="password" name="password" id="password" onkeyup='check();' /><br />
+    <label>Confirm Password:</label> <br />
+    <input type="password" name="confirm_password" id="confirm_password" onkeyup='check();' /> <br />
+    <span id='message'></span><br />
+    <input type="submit" value="Send">
+    <input type="reset" value="Reset">
+    <br>
 
 
-</form>
-<!----This script is for password verificattion double entry to ensure that the two passwords created match each other,
+
+  </form>
+  <!----This script is for password verificattion double entry to ensure that the two passwords created match each other,
 if true displays match on screen to the user--->
-<script type="text/javascript">
-  var check = function() {
-  if (document.getElementById('password').value ==
-    document.getElementById('confirm_password').value) {
-    document.getElementById('message').style.color = 'green';
-    document.getElementById('message').innerHTML = 'matching';
-  } else {
-    document.getElementById('message').style.color = 'red';
-    document.getElementById('message').innerHTML = 'not matching';
-  }
-}
-</script>
+  <script type="text/javascript">
+    var check = function() {
+      if (document.getElementById('password').value ==
+        document.getElementById('confirm_password').value) {
+        document.getElementById('message').style.color = 'green';
+        document.getElementById('message').innerHTML = 'matching';
+      }
+      else {
+        document.getElementById('message').style.color = 'red';
+        document.getElementById('message').innerHTML = 'not matching';
+      }
+    }
+  </script>
 
 </center>
-<!--------------------------------------------------------> 
+<!-------------------------------------------------------->
 
 {%endblock%}
 <!--footer-->

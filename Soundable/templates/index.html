@@ -1,14 +1,11 @@
-{% extends 'base.html' %}
-{% load static %}
-{% load crispy_forms_tags %}
-	{% block head %}
-	<link rel="stylesheet" type="text/css" href="{%static 'css/fix.css' %}">
-	<link rel="stylesheet" href="{% static 'css/style.css' %}"  type="text/css"/>
-	{% endblock %}
-{% block content %} 
+{% extends 'base.html' %} {% load static %} {% load crispy_forms_tags %} {% block head %}
+<link rel="stylesheet" type="text/css" href="{%static 'css/fix.css' %}">
+<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" /> 
 
+{% endblock %} 
 
-	
+{% block content %}
+
 <div class="home">
 
 	<!-- Home Slider -->
@@ -51,16 +48,13 @@
 				</div>
 			</div>
 		</div>
-		<hr>
-		{% if messages %}
+		<hr> {% if messages %}
 		<div>
-			{% for message in messages %}
-			{{ message }}
-			{%endfor%}
+			{% for message in messages %} {{ message }} {%endfor%}
 		</div>
-		
+
 		{% endif %}
-		
+
 		<!-- Scroll Down -->
 		<div class="scroll_down scroll_down_link" data-scroll-to=".tours">
 			<a href="#"></a>
@@ -75,7 +69,7 @@
 
 	</div>
 </div>
- <!--single song preview container ---------->
+<!--single song preview container ---------->
 
 <div class="song">
 	<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{%static 'images/song.jpg' %}" data-speed="0.8"></div>
@@ -84,49 +78,34 @@
 			<div class="col">
 				<div class="song_content">
 
- <!--Player -->
+					<!--Player -->
 					<div class="single_player_container">
 						<div class="single_player d-flex flex-row align-items-center justify-content-start">
 							<div id="jplayer_1" class="jp-jplayer"></div>
 							<div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
 								<div class="jp-gui jp-interface d-flex flex-lg-row flex-column align-items-start justify-content-start">
 
- <!--Player Controls -->
+									<!--Player Controls -->
 									<div class="player_controls_box d-flex flex-row align-items-start justify-content-start">
 										<div class="order-lg-1 order-2">
 											<div class="player_title">song of the week</div>
 											<div class="jp-controls-holder player_controls ml-auto d-flex flex-row align-items-start justify-content-start">
-												<button class="jp-play player_button" tabindex="0"></button>
-												<button class="jp-stop player_button" tabindex="0"></button>
 											</div>
 										</div>
 										<div class="song_image ml-lg-auto order-lg-2 order-1"><img src="{%static 'images/song_1.jpg' %}" alt=""></div>
 									</div>
 
- <!--Progress Bar -->
+									<!--Progress Bar -->
 									<div class="player_bars d-flex flex-row align-items-start justify-content-start">
 										<div class="player_progress_box">
-											<div class="jp-current-time" role="timer" aria-label="time">00:00</div>
 											<div class="song_info">
 												<div class="jp-artist" aria-label="title">Michael Smith</div>
 												<div class="jp-title" aria-label="title"></div>
 											</div>
-											
+
 										</div>
 
- <!--Volume Controls -->
-										<div class="jp-volume-controls ml-lg-auto">
-											<div class="mute_button">
-												<button class="jp-mute" tabindex="0"></button>
-											</div>
-											<div class="d-flex flex-row align-items-center justify-content-start">
-												<div class="jp-volume-bar">
-													<div>
-														<div class="jp-volume-bar-value"></div>
-													</div>
-												</div>
-											</div>
-										</div>
+										<!--Volume Controls -->
 									</div>
 
 								</div>
@@ -154,7 +133,7 @@ Your browser does not support the audio element.
 </audio>
 </div>
 <div style="background-image: url('{% static 'images/row-2-col-1 (4).jpg'%}'); height: 203px; background-attachment: fixed; background-size: cover; margin-bottom:7px">
-		<h3 style="color:white">{{song2.name}}</h3>
+	<h3 style="color:white">{{song2.name}}</h3>
 	<audio controls controlsList="nodownload" style="margin:95px 40%">
   <source src="{{song2.downloadfile.url}}" type="audio/mpeg">
 Your browser does not support the audio element.
@@ -168,161 +147,160 @@ Your browser does not support the audio element.
 </audio>
 </div>
 
-
 <!-- Featured container showing all Genres of music in cards -->
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<div class="section_title text-center tours card-padding ">
+				<h1>Find Your Voice. Pick Your Genre...</h1>
+			</div>
+			<div class="card-group">
+				<div class="card">
+					<img src="{% static 'images/ian-dooley-k8OCHhEymME-unsplash.jpg' %}" class="card-img-top" alt="...">
+					<div class="card-body">
+					</div>
+					<button type="button" class="btn btn-secondary"><a href="{% url 'songs' %}"> Pop</button></a>
+					<div class="card-footer">
+					</div>
+				</div>
+				<div class="card">
+					<img src="{% static 'images/joseph-ngabo-kWnLO5B-X2s-unsplash.jpg' %}" class="card-img-top" alt="...">
+					<div class="card-body">
+					</div>
+					<button type="button" class="btn btn-secondary"><a href="{% url 'songs' %}">Hiphop</button></a>
+
+					<div class="card-footer">
+					</div>
+				</div>
+				<div class="card">
+					<img src="{% static 'images/natalie-rhea-riggs-ncWzRjn8Z0w-unsplash.jpg' %}" class="card-img-top" alt="...">
+					<div class="card-body">
+					</div>
+					<button type="button" class="btn btn-secondary"><a href="{% url 'songs' %}">Country</button></a>
+					<div class="card-footer">
+					</div>
+				</div>
+				<div class="card-group">
+
+					<div class="card">
+						<img src="{%static 'images/hanny-naibaho-D_LYjtHnDXE-unsplash.jpg' %}" class="card-img-top" alt="...">
+						<div class="card-body">
+						</div>
+						<button type="button" class="btn btn-secondary"><a href="{% url 'songs' %}">Dance</button></a>
+
+						<div class="card-footer">
+						</div>
+					</div>
+					<div class="card">
+						<img src="{% static 'images/dane-deaner-bIGJUpf6D-4-unsplash.jpg' %}" class="card-img-top" alt="...">
+						<div class="card-body">
+						</div>
+						<button type="button" class="btn btn-secondary"><a href="{% url 'songs' %}">Alternative</button></a>
+
+						<div class="card-footer">
+						</div>
+					</div>
+					<div class="card">
+						<img src="{% static 'images/kyle-ashton-ZgjlBP_mDjQ-unsplash.jpg' %}" class="card-img-top" alt="...">
+						<div class="card-body">
+						</div>
+						<button type="button" class="btn btn-secondary"><a href="{% url 'songs' %}">Rock</button></a>
+						<div class="card-footer">
+						</div>
+					</div>
+				</div>
+				<div class="card-group">
+					<div class="card">
+						<img src="{%static 'images/elijah-m-henderson-xgT3iQDIijU-unsplash.jpg' %}" class="card-img-top" alt="...">
+						<div class="card-body">
+						</div>
+						<button type="button" class="btn btn-secondary"><a href="{% url 'songs' %}">Americana</button></a>
+						<div class="card-footer">
+						</div>
+					</div>
+
+					<div class="card">
+						<img src="{%static 'images/alexandre-debieve-2EmLMaTshko-unsplash.jpg'%}" class="card-img-top" alt="...">
+						<div class="card-body">
+						</div>
+						<button type="button" class="btn btn-secondary"><a href="{% url 'songs' %}">Rap</button></a>
+						<div class="card-footer">
+
+						</div>
+					</div>
+					<div class="card">
+						<img src="{%static 'images/israel-palacio-Y20JJ_ddy9M-unsplash.jpg'%}" class="card-img-top" alt="...">
+						<div class="card-body">
+						</div>
+						<button type="button" class="btn btn-secondary"><a href="{% url 'songs' %}">Rythmn & Blues</button></a>
+
+						<div class="card-footer">
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- News feature advertisment of services-->
+
+<div class="news">
 	<div class="container">
 		<div class="row">
 			<div class="col">
-				<div class="section_title text-center tours card-padding ">
-					<h1>Find Your Voice. Pick Your Genre...</h1>
+				<div class="section_title">
+					<h1>Latest News</h1>
 				</div>
-			<div class="card-group">
-  <div class="card">
-    <img src="{% static 'images/ian-dooley-k8OCHhEymME-unsplash.jpg' %}" class="card-img-top" alt="...">
-    <div class="card-body">
-    </div>
-      <button type="button" class="btn btn-secondary"><a href="{% url 'songs' %}"> Pop</button></a>
-    <div class="card-footer">
-    </div>
-  </div>
-  <div class="card">
-    <img src="{% static 'images/joseph-ngabo-kWnLO5B-X2s-unsplash.jpg' %}" class="card-img-top" alt="...">
-    <div class="card-body">
-    </div>
-          <button type="button" class="btn btn-secondary"><a href="{% url 'songs' %}">Hiphop</button></a>
-
-    <div class="card-footer">
-    </div>
-  </div>
-  <div class="card">
-    <img src="{% static 'images/natalie-rhea-riggs-ncWzRjn8Z0w-unsplash.jpg' %}" class="card-img-top" alt="...">
-    <div class="card-body">
-    </div>
- <button type="button" class="btn btn-secondary"><a href="{% url 'songs' %}">Country</button></a>
-    <div class="card-footer">
-    </div>
-  </div>
-  <div class="card-group">
- 
-  <div class="card">
-    <img src="{%static 'images/hanny-naibaho-D_LYjtHnDXE-unsplash.jpg' %}" class="card-img-top" alt="...">
-    <div class="card-body">
-    </div>
-         <button type="button" class="btn btn-secondary"><a href="{% url 'songs' %}">Dance</button></a>
-         
-    <div class="card-footer">
-    </div>
-  </div>
-   <div class="card">
-    <img src="{% static 'images/dane-deaner-bIGJUpf6D-4-unsplash.jpg' %}" class="card-img-top" alt="...">
-    <div class="card-body">
-    </div>
-         <button type="button" class="btn btn-secondary"><a href="{% url 'songs' %}">Alternative</button></a>
-
-    <div class="card-footer">
-    </div>
-  </div>
-  <div class="card">
-    <img src="{% static 'images/kyle-ashton-ZgjlBP_mDjQ-unsplash.jpg' %}" class="card-img-top" alt="...">
-    <div class="card-body">
-    </div>
-         <button type="button" class="btn btn-secondary"><a href="{% url 'songs' %}">Rock</button></a>
-    <div class="card-footer">
-    </div>
-  </div>
-</div>
-<div class="card-group">
-	 <div class="card">
-    <img src="{%static 'images/elijah-m-henderson-xgT3iQDIijU-unsplash.jpg' %}" class="card-img-top" alt="...">
-    <div class="card-body">
-    </div>
-	 <button type="button" class="btn btn-secondary"><a href="{% url 'songs' %}">Americana</button></a>
-    <div class="card-footer">
-    </div>
-  </div>
-
-  <div class="card">
-    <img src="{%static 'images/alexandre-debieve-2EmLMaTshko-unsplash.jpg'%}" class="card-img-top" alt="...">
-    <div class="card-body">
-    </div>
-         <button type="button" class="btn btn-secondary"><a href="{% url 'songs' %}">Rap</button></a>
-    <div class="card-footer">
-      
-    </div>
-  </div>
-    <div class="card">
-    <img src="{%static 'images/israel-palacio-Y20JJ_ddy9M-unsplash.jpg'%}" class="card-img-top" alt="...">
-    <div class="card-body">
-    </div>
-         <button type="button" class="btn btn-secondary"><a href="{% url 'songs' %}">Rythmn & Blues</button></a>
-
-    <div class="card-footer">
-    </div>
-  </div>
- 
-</div>
-</div>
 			</div>
 		</div>
-	</div>
+		<div class="row news_row">
 
-	<!-- News feature advertisment of services-->
-
-	<div class="news">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class="section_title">
-						<h1>Latest News</h1>
+			<!-- News Post -->
+			<div class="col-xl-4 col-md-6">
+				<div class="news_post image_top">
+					<div class="news_post_image"><img src="{%static 'images/news_1.jpg' %}" alt=""></div>
+					<div class="news_post_content">
+						<div class="news_post_date"><a href="#">Oct 19, 2020</a></div>
+						<div class="news_post_title"><a href="#">Music Seminary at Festival</a></div>
+						<div class="news_post_text">
+							<p>How can music suffer beneath the jargon? Music disappoints an incorrect tune around the bush crew. Outside library screams music. The footnote peers over library.</p>
+						</div>
 					</div>
 				</div>
 			</div>
-			<div class="row news_row">
 
-				<!-- News Post -->
-				<div class="col-xl-4 col-md-6">
-					<div class="news_post image_top">
-						<div class="news_post_image"><img src="{%static 'images/news_1.jpg' %}" alt=""></div>
-						<div class="news_post_content">
-							<div class="news_post_date"><a href="#">Oct 19, 2020</a></div>
-							<div class="news_post_title"><a href="#">Music Seminary at Festival</a></div>
-							<div class="news_post_text">
-								<p>How can music suffer beneath the jargon? Music disappoints an incorrect tune around the bush crew. Outside library screams music. The footnote peers over library.</p>
-							</div>
+
+			<!-- News Post -->
+			<div class="col-xl-4 col-md-6">
+				<div class="news_post image_bottom d-flex flex-column align-items-start justify-content-start">
+					<div class="news_post_content order-md-1 order-2">
+						<div class="news_post_date"><a href="#">Oct 19, 2020</a></div>
+						<div class="news_post_title"><a href="#">Festival list for 2019</a></div>
+						<div class="news_post_text">
+							<p>An intrinsic creator produces live show. Band music waits beneath a competitive verse. Whatever fudge meets band music in the revolting psychologist.</p>
 						</div>
 					</div>
+					<div class="news_post_image order-md-2 order-1"><img src="{%static 'images/news_2.jpg' %}" alt=""></div>
 				</div>
-				
+			</div>
 
-				<!-- News Post -->
-				<div class="col-xl-4 col-md-6">
-					<div class="news_post image_bottom d-flex flex-column align-items-start justify-content-start">
-						<div class="news_post_content order-md-1 order-2">
-							<div class="news_post_date"><a href="#">Oct 19, 2020</a></div>
-							<div class="news_post_title"><a href="#">Festival list for 2019</a></div>
-							<div class="news_post_text">
-								<p>An intrinsic creator produces live show. Band music waits beneath a competitive verse. Whatever fudge meets band music in the revolting psychologist.</p>
-							</div>
-						</div>
-						<div class="news_post_image order-md-2 order-1"><img src="{%static 'images/news_2.jpg' %}" alt=""></div>
-					</div>
-				</div>
-
-				<!-- News Post -->
-				<div class="col-xl-4 col-md-6">
-					<div class="news_post image_top">
-						<div class="news_post_image"><img src="{%static 'images/news_3.jpg' %}" alt=""></div>
-						<div class="news_post_content">
-							<div class="news_post_date"><a href="#">Oct 19, 2020</a></div>
-							<div class="news_post_title"><a href="#">New album release in 2019</a></div>
-							<div class="news_post_text">
-								<p>Band music compromises album release. Album release slices a camp throughout a pet maker. A horse consents without the critic. Band music shoots a wizard underneath the gown.</p>
-							</div>
+			<!-- News Post -->
+			<div class="col-xl-4 col-md-6">
+				<div class="news_post image_top">
+					<div class="news_post_image"><img src="{%static 'images/news_3.jpg' %}" alt=""></div>
+					<div class="news_post_content">
+						<div class="news_post_date"><a href="#">Oct 19, 2020</a></div>
+						<div class="news_post_title"><a href="#">New album release in 2019</a></div>
+						<div class="news_post_text">
+							<p>Band music compromises album release. Album release slices a camp throughout a pet maker. A horse consents without the critic. Band music shoots a wizard underneath the gown.</p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	{% endblock %}
-	<!-- Footer -->
+</div>
+{% endblock %}
+<!-- Footer -->
